@@ -16,6 +16,6 @@ form input, form textarea {
   max-width: 400px;
 }
 h1 {
-  color:red;
-  font-size: 2rem;
+  color: red;
+  padding-inline: 2rem;
 }
