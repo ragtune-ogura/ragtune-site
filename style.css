@@ -1,8 +1,9 @@
 body {
-  font-family: sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
   margin: 0;
   padding: 0;
 }
+
 header, section, footer {
   padding: 2rem;
 }
@@ -26,4 +27,13 @@ h1 {
 /* test */
 #section2, #section4 {
   background: #f8f8f8;
+}
+/* font  */
+.ft-a {
+  font-family: allura, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.ft-en {
+  font-variation-settings: "wght" 1000;
 }
