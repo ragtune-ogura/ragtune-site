@@ -6,6 +6,10 @@ body {
 header, section, footer {
   padding: 2rem;
 }
+header, footer {
+  background: #f0f0f0;
+  padding: 1.5rem;
+}
 nav a {
   margin-right: 1rem;
 }
