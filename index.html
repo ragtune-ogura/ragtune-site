@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>パーシャル読み込みLP</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>トップページ｜サイト名</title>
+  <script>
+    fetch('partials/head-include.html')
+      .then(res => res.text())
+      .then(html => {
+        document.head.insertAdjacentHTML('beforeend', html);
+      });
+  </script>
 </head>
 <body>
   <div id="header-include"></div>
