@@ -37,3 +37,6 @@ h1 {
 .ft-en {
   font-variation-settings: "wght" 1000;
 }
+.ft-ja {
+  font-family: "Noto Sans JP", sans-serif;
+}
