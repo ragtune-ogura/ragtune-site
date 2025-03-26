@@ -23,3 +23,7 @@ h1 {
   color: red;
   padding-inline: 2rem;
 }
+/* test */
+#section2, #section4 {
+  background: #f8f8f8;
+}
