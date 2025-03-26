@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>シンプルLPサイト</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>パーシャル読み込みLP</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <img src="images/logo-v2-hz.svg" alt="サイトロゴ" style="max-width: 200px;">
-    <h1>サイトタイトル</h1>
-    <nav>
-      <a href="index.html">ホーム</a>
-      <a href="contact.html">お問い合わせ</a>
-      <a href="#" onclick="toggleLanguage()">EN/JA</a>
-    </nav>
-  </header>
+  <div id="header-include"></div>
+  <div id="section1-include"></div>
+  <div id="section2-include"></div>
+  <div id="section3-include"></div>
+  <div id="section4-include"></div>
+  <div id="footer-include"></div>
 
-  <section id="mv"><h2>MVセクション</h2></section>
-  <section id="about"><h2>About</h2><p>私たちについての説明</p></section>
-  <section id="portfolio"><h2>Our Portfolio Highlights</h2></section>
-  <section id="plan"><h2>Plan</h2></section>
+  <script>
+    const includes = [
+      { id: "header-include", file: "partials/header.html" },
+      { id: "section1-include", file: "partials/section1.html" },
+      { id: "section2-include", file: "partials/section2.html" },
+      { id: "section3-include", file: "partials/section3.html" },
+      { id: "section4-include", file: "partials/section4.html" },
+      { id: "footer-include", file: "partials/footer.html" },
+    ];
 
-  <footer>
-    <a href="privacy.html">プライバシーポリシー</a> |
-    <a href="terms.html">利用規約</a> |
-    <a href="law.html">特商法表記</a>
-    <p>© 2025</p>
-  </footer>
-
-  <script src="script.js"></script>
+    includes.forEach(part => {
+      fetch(part.file)
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById(part.id).outerHTML = html;
+        });
+    });
+  </script>
 </body>
 </html>
