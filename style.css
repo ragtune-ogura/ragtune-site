@@ -69,3 +69,10 @@ h1 {
   color: var(--sub-sky);
   line-height: 1.5;
 }
+
+/* add styles here */
+h2 {
+  color: var(--primary-dark);
+  font: var(--h2-font);
+  padding-block: 5rem;
+}
