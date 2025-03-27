@@ -1,3 +1,39 @@
+:root {
+  --border: #efefefff;
+  --image-bg: #fdfdfdff;
+  --sub-yellow: #f5d566ff;
+  --sub-orange: #f5a366ff;
+  --sub-mint: #66f5dfff;
+  --sub-sky: #56c7f5ff;
+  --primary-main: #665df5ff;
+  --primary-light: #8a85f9ff;
+  --primary-dark: #4a48c6ff;
+  --text-dark: #161617ff;
+  --text-main: #58585dff;
+  --gray-main: #f2f2f2ff;
+  --gray-light: #e6e6e6ff;
+  --font-jp: font-family: "Noto Sans JP", sans-serif;
+  --font-en: font-variation-settings: "wght" 1000;
+  --h2-font: normal 400 24px/28.8px var(--font-jp);
+  --h2-bold-desktop-font: normal 700 24px/28.8px var(--font-jp);
+  --h2-bold-mobile-font: normal 700 18px/34.2px var(--font-jp);
+  --body-desktop-font: normal 400 16px/19.2px var(--font-jp);
+  --body-s-font: normal 400 14px/16.8px var(--font-jp);
+  --body-mobile-font: normal 400 14px/16.8px var(--font-jp);
+  --h4-desktop-font: normal 700 18px/21.6px var(--font-jp);
+  --h4-mobile-font: normal 700 16px/25.6px var(--font-jp);
+  --h1-desktop-en-font: normal 400 48px/57.6px var(--font-en);
+  --h1-mobile-en-font: normal 400 24px/36px var(--font-en);
+  --link-normal-font: normal 400 16px/19.2px var(--font-jp);
+  --link-small-font: normal 400 12px/14.4px var(--font-jp);
+  --subheading-en-desktop-font: normal 400 28px/33.6px var(--font-en);
+  --subheading-en-mobile-font: normal 400 18px/27px var(--font-en);
+  --h2-heading-en-desktop-font: normal 400 40px/48px var(--font-en);
+  --h2-heading-en-mobile-font: normal 400 22px/33px var(--font-en);
+  --h2-subheading-ja-mobile-font: normal 700 14px/16.8px var(--font-jp);
+  --button-mobile-font: normal 700 16px/19.2px var(--font-en);
+}
+
 body {
   font-family: "Noto Sans JP", sans-serif;
   margin: 0;
@@ -23,10 +59,6 @@ form input, form textarea {
 h1 {
   color: red;
   padding-inline: 2rem;
-}
-/* test */
-#section2, #section4 {
-  background: #f8f8f8;
 }
 /* font  */
 .ft-a {
