@@ -13,6 +13,8 @@
   --gray-main: #f2f2f2ff;
   --gray-light: #e6e6e6ff;
   --font-jp: "Noto Sans JP", sans-serif;
+  --font-allura: allura, sans-serif;
+  --font-mulish: mulish, sans-serif;  
   --h2-font: normal 400 24px/28.8px var(--font-jp);
   --h2-bold-desktop-font: normal 700 24px/28.8px var(--font-jp);
   --h2-bold-mobile-font: normal 700 18px/34.2px var(--font-jp);
