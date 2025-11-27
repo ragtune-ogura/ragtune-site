@@ -2,7 +2,9 @@ function toggleLanguage() {
   alert('言語切替はまだ実装されていません');
 }
 
-// Dropdown toggle
+/* ==========================
+   Dropdown (Language & Menu)
+=========================== */
 document.addEventListener("click", (e) => {
   // Language dropdown
   if (e.target.closest(".lang-btn")) {
@@ -32,13 +34,18 @@ document.querySelectorAll(".lang-dropdown li").forEach(li => {
   });
 });
 
-// section3 が読み込まれたタイミングで Swiper 初期化
-function initSection3Swiper() {
-  // section3 が DOM に存在するか確認
-  const target = document.querySelector(".client-swiper");
-  if (!target) return;
 
-  console.log("Swiper initialized");
+/* ==========================
+   Swiper Init
+=========================== */
+function initSection3Swiper() {
+  const target = document.querySelector(".client-swiper");
+  if (!target) {
+    console.log("Swiper target not found yet");
+    return;
+  }
+
+  console.log("Swiper initializing...");
 
   new Swiper(".client-swiper", {
     loop: true,
@@ -48,13 +55,9 @@ function initSection3Swiper() {
     },
     slidesPerView: 1,
     spaceBetween: 20,
-
     breakpoints: {
-      1000: {
-        slidesPerView: 1.5,
-      }
+      1000: { slidesPerView: 1.5 }
     },
-
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -62,5 +65,5 @@ function initSection3Swiper() {
   });
 }
 
-// partial 読み込み後に実行されるようにする
+// partial 読み込み完了後イベントで Swiper 初期化
 document.addEventListener("partialsLoaded", initSection3Swiper);
