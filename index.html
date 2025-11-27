@@ -25,22 +25,29 @@
   <div id="footer-include"></div>
 
   <script>
-    const includes = [
-      { id: "header-include", file: "./partials/header.html" },
-      { id: "section1-include", file: "./partials/section1.html" },
-      { id: "section2-include", file: "./partials/section2.html" },
-      { id: "section3-include", file: "./partials/section3.html" },
-      { id: "section4-include", file: "./partials/section4.html" },
-      { id: "footer-include", file: "./partials/footer.html" },
-    ];
+  const includes = [
+    { id: "header-include", file: "./partials/header.html" },
+    { id: "section1-include", file: "./partials/section1.html" },
+    { id: "section2-include", file: "./partials/section2.html" },
+    { id: "section3-include", file: "./partials/section3.html" },
+    { id: "section4-include", file: "./partials/section4.html" },
+    { id: "footer-include", file: "./partials/footer.html" },
+  ];
 
-    includes.forEach(part => {
+  Promise.all(
+    includes.map(part =>
       fetch(part.file)
         .then(res => res.text())
         .then(html => {
           document.getElementById(part.id).innerHTML = html;
-        });
-    });
-  </script>
+        })
+    )
+  ).then(() => {
+    // ここで script.js を読み込む！（重要）
+    const s = document.createElement("script");
+    s.src = "./script.js";
+    document.body.appendChild(s);
+  });
+</script>
 </body>
 </html>
