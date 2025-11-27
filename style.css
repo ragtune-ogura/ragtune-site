@@ -168,3 +168,21 @@ h2 {
 .contact-btn:hover {
   opacity: .85;
 }
+
+/* ▼ ホバーで開く ▼ */
+.hover-open .menu-dropdown {
+  display: none;
+}
+
+.hover-open:hover .menu-dropdown {
+  display: block;
+}
+
+/* ▼ 言語セレクターもホバーで開く場合は以下を追加 ▼ */
+.hover-open .lang-dropdown {
+  display: none;
+}
+
+.hover-open:hover .lang-dropdown {
+  display: block;
+}
