@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>トップページ｜サイト名</title>
-  <link rel="stylesheet" href="./style.css">
 
-  <!-- 共通headを外部化したい場合は、メタ系は残す -->
+  <!-- ページ固有CSS -->
+  <link rel="stylesheet" href="./style.css" />
+
+  <!-- Swiper CSS（headに置いてOK） -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+
+  <!-- ★ head-include は head に入れる ★ -->
   <script>
-    fetch('./partials/head-include.html')
-      .then(res => res.text())
-      .then(html => {
-        // メタ・タイトルを壊さないように body end に入れる
-        document.body.insertAdjacentHTML('afterbegin', html);
+    fetch("./partials/head-include.html")
+      .then((res) => res.text())
+      .then((html) => {
+        document.head.insertAdjacentHTML("beforeend", html);
       });
   </script>
 </head>
+
 <body>
+
+  <!-- ▼ partials ▼ -->
   <div id="header-include"></div>
   <div id="section1-include"></div>
   <div id="section2-include"></div>
@@ -24,34 +34,40 @@
   <div id="section4-include"></div>
   <div id="footer-include"></div>
 
+  <!-- ▼ partial include script ▼ -->
   <script>
-  const includes = [
-    { id: "header-include", file: "./partials/header.html" },
-    { id: "section1-include", file: "./partials/section1.html" },
-    { id: "section2-include", file: "./partials/section2.html" },
-    { id: "section3-include", file: "./partials/section3.html" },
-    { id: "section4-include", file: "./partials/section4.html" },
-    { id: "footer-include", file: "./partials/footer.html" },
-  ];
+    const includes = [
+      { id: "header-include", file: "./partials/header.html" },
+      { id: "section1-include", file: "./partials/section1.html" },
+      { id: "section2-include", file: "./partials/section2.html" },
+      { id: "section3-include", file: "./partials/section3.html" },
+      { id: "section4-include", file: "./partials/section4.html" },
+      { id: "footer-include", file: "./partials/footer.html" },
+    ];
 
-  Promise.all(
-    includes.map(part =>
-      fetch(part.file)
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById(part.id).innerHTML = html;
-        })
-    )
-  ).then(() => {
-    // Swiper や navbar 等すべての JS はここで動く
-    const s = document.createElement("script");
-    s.src = "./script.js";
-    document.body.appendChild(s);
+    Promise.all(
+      includes.map((part) =>
+        fetch(part.file)
+          .then((res) => res.text())
+          .then((html) => {
+            document.getElementById(part.id).innerHTML = html;
+          })
+      )
+    ).then(() => {
+      // head-include に含まれなかった場合の対策（Swiper JS を読み込む）
+      const swiperScript = document.createElement("script");
+      swiperScript.src =
+        "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js";
+      document.body.appendChild(swiperScript);
 
-    // カスタムイベントを発火する（Swiper初期化用）
-    document.dispatchEvent(new Event("partialsLoaded"));
-  });
+      // script.js 読み込み（これが1回だけ）
+      const mainScript = document.createElement("script");
+      mainScript.src = "./script.js";
+      document.body.appendChild(mainScript);
 
-</script>
+      // partial 完了イベント
+      document.dispatchEvent(new Event("partialsLoaded"));
+    });
+  </script>
 </body>
 </html>
