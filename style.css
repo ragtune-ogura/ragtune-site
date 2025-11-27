@@ -186,3 +186,27 @@ h2 {
 .hover-open:hover .lang-dropdown {
   display: block;
 }
+
+/* 親（menu-selector）に hover を適用し、領域を広げる */
+.menu-selector {
+  position: relative;   /* これが必須：子のdropdown位置の基準 */
+  display: inline-block; /* 要素全体が hover 判定になる */
+}
+
+/* dropdown が親から外れないようにピタッと下に配置 */
+.menu-dropdown {
+  position: absolute;
+  top: 100%;     /* ボタンの真下に接続 */
+  right: 0;
+  margin-top: 0; /* 隙間を消すのが重要 */
+  padding: 8px 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  display: none;
+  z-index: 200;
+}
+
+/* hover で表示（親ごと hover） */
+.menu-selector:hover .menu-dropdown {
+  display: block;
+}
