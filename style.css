@@ -78,3 +78,93 @@ h2 {
   font: var(--h2-font);
   padding-block: 5rem;
 }
+
+/* Header container */
+.site-header {
+  width: 100%;
+  padding: 16px 24px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #eee;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.header-logo img {
+  height: 32px;
+}
+
+/* Navigation */
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Buttons (lang / menu) */
+.lang-btn,
+.menu-btn {
+  background: none;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lang-btn img {
+  height: 14px;
+}
+
+/* Dropdown common */
+.lang-selector,
+.menu-selector {
+  position: relative;
+}
+
+.lang-dropdown,
+.menu-dropdown {
+  position: absolute;
+  right: 0;
+  margin-top: 6px;
+  background: #fff;
+  border: 1px solid #ddd;
+  list-style: none;
+  padding: 8px 0;
+  display: none;
+  min-width: 140px;
+  z-index: 20;
+}
+
+.lang-dropdown li,
+.menu-dropdown li {
+  padding: 8px 14px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.lang-dropdown li:hover,
+.menu-dropdown li:hover {
+  background: #f5f5f5;
+}
+
+/* Contact button */
+.contact-btn {
+  padding: 8px 16px;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.contact-btn:hover {
+  opacity: .85;
+}
