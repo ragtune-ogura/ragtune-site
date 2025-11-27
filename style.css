@@ -1,17 +1,21 @@
+/* =========================================
+  0. Root Variables（現在は無効化したい → コメントアウト）
+========================================= */
+/*
 :root {
-  --border: #efefefff;
-  --image-bg: #fdfdfdff;
-  --sub-yellow: #f5d566ff;
-  --sub-orange: #f5a366ff;
-  --sub-mint: #66f5dfff;
-  --sub-sky: #56c7f5ff;
-  --primary-main: #665df5ff;
-  --primary-light: #8a85f9ff;
-  --primary-dark: #4a48c6ff;
-  --text-dark: #161617ff;
-  --text-main: #58585dff;
-  --gray-main: #f2f2f2ff;
-  --gray-light: #e6e6e6ff;
+  --border: #efefef;
+  --image-bg: #fdfdfd;
+  --sub-yellow: #f5d566;
+  --sub-orange: #f5a366;
+  --sub-mint: #66f5df;
+  --sub-sky: #56c7f5;
+  --primary-main: #665df5;
+  --primary-light: #8a85f9;
+  --primary-dark: #4a48c6;
+  --text-dark: #161617;
+  --text-main: #58585d;
+  --gray-main: #f2f2f2;
+  --gray-light: #e6e6e6;
   --font-jp: "Noto Sans JP", sans-serif;
   --font-allura: "Allura", cursive;
   --font-mulish: "Mulish", sans-serif;
@@ -27,7 +31,12 @@
   --link-small-font: normal 400 12px/14.4px var(--font-jp);
   --h2-subheading-ja-mobile-font: normal 700 14px/16.8px var(--font-jp);
 }
+*/
 
+
+/* =========================================
+  1. Base
+========================================= */
 body {
   font-family: "Noto Sans JP", sans-serif;
   margin: 0;
@@ -37,49 +46,52 @@ body {
 header, section, footer {
   padding: 2rem;
 }
+
 header, footer {
   background: #f0f0f0;
-  padding: 1.5rem;
 }
+
 nav a {
   margin-right: 1rem;
 }
-form input, form textarea {
+
+form input,
+form textarea {
   display: block;
   margin-bottom: 1rem;
   width: 100%;
   max-width: 400px;
 }
+
 h1 {
   color: red;
   padding-inline: 2rem;
 }
-/* font  */
-.ft-a {
-  font-family: allura, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-.ft-en {
-  font-variation-settings: "wght" 1000;
-}
-.ft-ja {
-  font-family: "Noto Sans JP", sans-serif;
-}
-.ft-cn {
-  font-size: 1.5rem;
-  color: var(--sub-sky);
-  line-height: 1.5;
-}
 
-/* add styles here */
 h2 {
-  color: var(--primary-dark);
-  font: var(--h2-font);
+  color: #4a48c6; /* 変数解除のため固定値に変更 */
+  font: normal 400 24px/28.8px "Noto Sans JP", sans-serif;
   padding-block: 5rem;
 }
 
-/* Header container */
+
+/* =========================================
+  2. Typography Utility
+========================================= */
+.ft-a { font-family: allura, sans-serif; }
+.ft-en { font-variation-settings: "wght" 1000; }
+.ft-ja { font-family: "Noto Sans JP", sans-serif; }
+
+.ft-cn {
+  font-size: 1.5rem;
+  color: #56c7f5;
+  line-height: 1.5;
+}
+
+
+/* =========================================
+  3. Header Layout
+========================================= */
 .site-header {
   width: 100%;
   padding: 16px 24px;
@@ -95,19 +107,22 @@ h2 {
   justify-content: space-between;
 }
 
-/* Logo */
 .header-logo img {
   height: 32px;
 }
 
-/* Navigation */
 .header-nav {
   display: flex;
   align-items: center;
   gap: 24px;
 }
 
-/* Buttons (lang / menu) */
+
+/* =========================================
+  4. Dropdown (Menu & Language)
+========================================= */
+
+/* 共通ボタン */
 .lang-btn,
 .menu-btn {
   background: none;
@@ -123,24 +138,28 @@ h2 {
   height: 14px;
 }
 
-/* Dropdown common */
+/* 親領域（hover トリガー）を広げる */
 .lang-selector,
 .menu-selector {
   position: relative;
+  display: inline-block;
 }
 
+
+/* ▼ dropdown 共通スタイル */
 .lang-dropdown,
 .menu-dropdown {
   position: absolute;
+  top: 100%;
   right: 0;
-  margin-top: 6px;
   background: #fff;
   border: 1px solid #ddd;
   list-style: none;
   padding: 8px 0;
+  margin: 0;
   display: none;
   min-width: 140px;
-  z-index: 20;
+  z-index: 200;
 }
 
 .lang-dropdown li,
@@ -155,7 +174,19 @@ h2 {
   background: #f5f5f5;
 }
 
-/* Contact button */
+/* ▼ hoverで開く（親ごと hover） */
+.menu-selector:hover .menu-dropdown {
+  display: block;
+}
+
+.lang-selector:hover .lang-dropdown {
+  display: block;
+}
+
+
+/* =========================================
+  5. Contact Button
+========================================= */
 .contact-btn {
   padding: 8px 16px;
   background: #111;
@@ -167,46 +198,4 @@ h2 {
 
 .contact-btn:hover {
   opacity: .85;
-}
-
-/* ▼ ホバーで開く ▼ */
-.hover-open .menu-dropdown {
-  display: none;
-}
-
-.hover-open:hover .menu-dropdown {
-  display: block;
-}
-
-/* ▼ 言語セレクターもホバーで開く場合は以下を追加 ▼ */
-.hover-open .lang-dropdown {
-  display: none;
-}
-
-.hover-open:hover .lang-dropdown {
-  display: block;
-}
-
-/* 親（menu-selector）に hover を適用し、領域を広げる */
-.menu-selector {
-  position: relative;   /* これが必須：子のdropdown位置の基準 */
-  display: inline-block; /* 要素全体が hover 判定になる */
-}
-
-/* dropdown が親から外れないようにピタッと下に配置 */
-.menu-dropdown {
-  position: absolute;
-  top: 100%;     /* ボタンの真下に接続 */
-  right: 0;
-  margin-top: 0; /* 隙間を消すのが重要 */
-  padding: 8px 0;
-  background: #fff;
-  border: 1px solid #ddd;
-  display: none;
-  z-index: 200;
-}
-
-/* hover で表示（親ごと hover） */
-.menu-selector:hover .menu-dropdown {
-  display: block;
 }
