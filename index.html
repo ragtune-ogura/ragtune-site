@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>トップページ｜サイト名</title>
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- 共通headを外部化したい場合は、メタ系は残す -->
   <script>
-    fetch('partials/head-include.html')
+    fetch('./partials/head-include.html')
       .then(res => res.text())
       .then(html => {
-        document.head.insertAdjacentHTML('beforeend', html);
+        // メタ・タイトルを壊さないように body end に入れる
+        document.body.insertAdjacentHTML('afterbegin', html);
       });
   </script>
 </head>
 <body>
-  <!-- インデックステスト2025/11/10 -->
   <div id="header-include"></div>
   <div id="section1-include"></div>
   <div id="section2-include"></div>
@@ -21,19 +26,19 @@
 
   <script>
     const includes = [
-      { id: "header-include", file: "partials/header.html" },
-      { id: "section1-include", file: "partials/section1.html" },
-      { id: "section2-include", file: "partials/section2.html" },
-      { id: "section3-include", file: "partials/section3.html" },
-      { id: "section4-include", file: "partials/section4.html" },
-      { id: "footer-include", file: "partials/footer.html" },
+      { id: "header-include", file: "./partials/header.html" },
+      { id: "section1-include", file: "./partials/section1.html" },
+      { id: "section2-include", file: "./partials/section2.html" },
+      { id: "section3-include", file: "./partials/section3.html" },
+      { id: "section4-include", file: "./partials/section4.html" },
+      { id: "footer-include", file: "./partials/footer.html" },
     ];
 
     includes.forEach(part => {
       fetch(part.file)
         .then(res => res.text())
         .then(html => {
-          document.getElementById(part.id).outerHTML = html;
+          document.getElementById(part.id).innerHTML = html;
         });
     });
   </script>
