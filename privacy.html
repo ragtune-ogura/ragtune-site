@@ -1,1 +1,52 @@
-<h2>プライバシーポリシー</h2><p>ここにポリシーが入ります。</p>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プライバシーポリシー｜サイト名</title>
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- 共通 head include（メタ系を壊さないように body に追加） -->
+  <script>
+    fetch('./partials/head-include.html')
+      .then(res => res.text())
+      .then(html => {
+        document.body.insertAdjacentHTML('afterbegin', html);
+      });
+  </script>
+</head>
+
+<body>
+  <div id="header-include"></div>
+
+  <main class="page-content">
+    <!-- ここに privacy or law の本文を書く -->
+    <h1>プライバシーポリシー</h1>
+    <p>…本文…</p>
+  </main>
+
+  <div id="footer-include"></div>
+
+  <script>
+    const includes = [
+      { id: "header-include", file: "./partials/header.html" },
+      { id: "footer-include", file: "./partials/footer.html" },
+    ];
+
+    Promise.all(
+      includes.map(part =>
+        fetch(part.file)
+          .then(res => res.text())
+          .then(html => {
+            document.getElementById(part.id).innerHTML = html;
+          })
+      )
+    ).then(() => {
+      // 共通スクリプト（header.js）を include 後に読み込む
+      const s = document.createElement("script");
+      s.src = "./script.js";
+      document.body.appendChild(s);
+    });
+  </script>
+</body>
+</html>
