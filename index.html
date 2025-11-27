@@ -43,11 +43,15 @@
         })
     )
   ).then(() => {
-    // ここで script.js を読み込む！（重要）
+    // Swiper や navbar 等すべての JS はここで動く
     const s = document.createElement("script");
     s.src = "./script.js";
     document.body.appendChild(s);
+
+    // カスタムイベントを発火する（Swiper初期化用）
+    document.dispatchEvent(new Event("partialsLoaded"));
   });
+
 </script>
 </body>
 </html>
