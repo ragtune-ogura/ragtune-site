@@ -19,26 +19,26 @@ document.addEventListener("click", (e) => {
   }
 });
 
-// =====================
-// Swiper Init
-// =====================
-function initSection3Swiper() {
-  const target = document.querySelector(".client-swiper");
-  if (!target) return;
+// // =====================
+// // Swiper Init
+// // =====================
+// function initSection3Swiper() {
+//   const target = document.querySelector(".client-swiper");
+//   if (!target) return;
 
-  console.log("Swiper initialized");
+//   console.log("Swiper initialized");
 
-  new Swiper(".client-swiper", {
-    loop: true,
-    autoplay: { delay: 5000, disableOnInteraction: false },
-    slidesPerView: 1,
-    spaceBetween: 20,
-    breakpoints: { 1000: { slidesPerView: 1.5 } },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
-}
+//   new Swiper(".client-swiper", {
+//     loop: true,
+//     autoplay: { delay: 5000, disableOnInteraction: false },
+//     slidesPerView: 1,
+//     spaceBetween: 20,
+//     breakpoints: { 1000: { slidesPerView: 1.5 } },
+//     navigation: {
+//       nextEl: ".swiper-button-next",
+//       prevEl: ".swiper-button-prev",
+//     },
+//   });
+// }
 
-document.addEventListener("partialsLoaded", initSection3Swiper);
+// document.addEventListener("partialsLoaded", initSection3Swiper);
