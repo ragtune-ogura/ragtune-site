@@ -7,13 +7,11 @@
 
   <!-- ページ固有CSS -->
   <link rel="stylesheet" href="./style.css" />
-
   <!-- Swiper CSS（headに置いてOK） -->
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
   />
-
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,12 +19,9 @@
     href="https://fonts.googleapis.com/css2?family=Allura&family=Mulish:wght@200;400;700;900&family=Noto+Sans+JP:wght@300;400;700;900&display=swap"
     rel="stylesheet"
   />
-
   <!-- Adobe Fonts -->
   <link rel="stylesheet" href="https://use.typekit.net/duu5afd.css" />
 
-  <!-- 共通スタイル -->
-  <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
@@ -59,12 +54,6 @@
           })
       )
     ).then(() => {
-      // head-include に含まれなかった場合の対策（Swiper JS を読み込む）
-      const swiperScript = document.createElement("script");
-      swiperScript.src =
-        "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js";
-      document.body.appendChild(swiperScript);
-
       // script.js 読み込み（これが1回だけ）
       const mainScript = document.createElement("script");
       mainScript.src = "./script.js";
