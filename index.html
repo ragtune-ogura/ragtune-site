@@ -31,6 +31,99 @@
   <div id="section1-include"></div>
   <div id="section2-include"></div>
   <div id="section3-include"></div>
+  <!-- swiper -->
+   <div class="swiper client-swiper">
+    <div class="swiper-wrapper">
+
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <div class="client-image">
+          <img src="./images/s4-image01.png" alt="">
+        </div>
+        <div class="client-meta">
+          <h4>Client Name 1</h4>
+          <p>Some description text 1</p>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide">
+        <div class="client-image">
+          <img src="./images/s4-image02.png" alt="">
+        </div>
+        <div class="client-meta">
+          <h4>Client Name 2</h4>
+          <p>Some description text 2</p>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="swiper-slide">
+        <div class="client-image">
+          <img src="./images/s4-image03.png" alt="">
+        </div>
+        <div class="client-meta">
+          <h4>Client Name 3</h4>
+          <p>Some description text 3</p>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="swiper-slide">
+        <div class="client-image">
+          <img src="./images/s4-image04.png" alt="">
+        </div>
+        <div class="client-meta">
+          <h4>Client Name 4</h4>
+          <p>Some description text 4</p>
+        </div>
+      </div>
+
+      <!-- Slide 5 -->
+      <div class="swiper-slide">
+        <div class="client-image">
+          <img src="./images/s4-image05.png" alt="">
+        </div>
+        <div class="client-meta">
+          <h4>Client Name 5</h4>
+          <p>Some description text 5</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Arrows -->
+    <div class="client-swiper-controls">
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.client-swiper', {
+      // Optional parameters
+      direction: 'vertical',
+      loop: true,
+
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+      // And if we need scrollbar
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+    });
+  </script>   
+  
   <div id="section4-include"></div>
   <div id="footer-include"></div>
 
