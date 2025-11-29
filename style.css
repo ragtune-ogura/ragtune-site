@@ -32,6 +32,9 @@
   --h2-subheading-ja-mobile-font: normal 700 14px/16.8px var(--font-jp);
 }
 */
+:root {
+  --p16-20: clamp(1rem, 0.381vw + 0.907rem, 1.25rem);
+}
 
 
 /* =========================================
