@@ -7,11 +7,13 @@
 
   <!-- ページ固有CSS -->
   <link rel="stylesheet" href="./style.css" />
-  <!-- Swiper CSS（headに置いてOK） -->
+
+  <!-- Swiper CSS -->
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
   />
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,9 +21,9 @@
     href="https://fonts.googleapis.com/css2?family=Allura&family=Mulish:wght@200;400;700;900&family=Noto+Sans+JP:wght@300;400;700;900&display=swap"
     rel="stylesheet"
   />
+
   <!-- Adobe Fonts -->
   <link rel="stylesheet" href="https://use.typekit.net/duu5afd.css" />
-
 </head>
 
 <body>
@@ -31,63 +33,34 @@
   <div id="section1-include"></div>
   <div id="section2-include"></div>
   <div id="section3-include"></div>
-  <!-- swiper -->
-   <div class="swiper client-swiper">
+
+  <!-- Swiper -->
+  <div class="swiper client-swiper">
     <div class="swiper-wrapper">
 
-      <!-- Slide 1 -->
       <div class="swiper-slide">
-        <div class="client-image">
-          <img src="./images/s4-image01.png" alt="">
-        </div>
-        <div class="client-meta">
-          <h4>Client Name 1</h4>
-          <p>Some description text 1</p>
-        </div>
+        <div class="client-image"><img src="./images/s4-image01.png" alt=""></div>
+        <div class="client-meta"><h4>Client Name 1</h4><p>Some description text 1</p></div>
       </div>
 
-      <!-- Slide 2 -->
       <div class="swiper-slide">
-        <div class="client-image">
-          <img src="./images/s4-image02.png" alt="">
-        </div>
-        <div class="client-meta">
-          <h4>Client Name 2</h4>
-          <p>Some description text 2</p>
-        </div>
+        <div class="client-image"><img src="./images/s4-image02.png" alt=""></div>
+        <div class="client-meta"><h4>Client Name 2</h4><p>Some description text 2</p></div>
       </div>
 
-      <!-- Slide 3 -->
       <div class="swiper-slide">
-        <div class="client-image">
-          <img src="./images/s4-image03.png" alt="">
-        </div>
-        <div class="client-meta">
-          <h4>Client Name 3</h4>
-          <p>Some description text 3</p>
-        </div>
+        <div class="client-image"><img src="./images/s4-image03.png" alt=""></div>
+        <div class="client-meta"><h4>Client Name 3</h4><p>Some description text 3</p></div>
       </div>
 
-      <!-- Slide 4 -->
       <div class="swiper-slide">
-        <div class="client-image">
-          <img src="./images/s4-image04.png" alt="">
-        </div>
-        <div class="client-meta">
-          <h4>Client Name 4</h4>
-          <p>Some description text 4</p>
-        </div>
+        <div class="client-image"><img src="./images/s4-image04.png" alt=""></div>
+        <div class="client-meta"><h4>Client Name 4</h4><p>Some description text 4</p></div>
       </div>
 
-      <!-- Slide 5 -->
       <div class="swiper-slide">
-        <div class="client-image">
-          <img src="./images/s4-image05.png" alt="">
-        </div>
-        <div class="client-meta">
-          <h4>Client Name 5</h4>
-          <p>Some description text 5</p>
-        </div>
+        <div class="client-image"><img src="./images/s4-image05.png" alt=""></div>
+        <div class="client-meta"><h4>Client Name 5</h4><p>Some description text 5</p></div>
       </div>
 
     </div>
@@ -99,20 +72,11 @@
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-  <script>
-    const swiper = new Swiper('.client-swiper', {
-      // Navigation arrows
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-
-    });
-  </script>   
-  
   <div id="section4-include"></div>
   <div id="footer-include"></div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
   <!-- ▼ partial include script ▼ -->
   <script>
@@ -125,6 +89,7 @@
       { id: "footer-include", file: "./partials/footer.html" },
     ];
 
+    // ▼ partial 読み込み
     Promise.all(
       includes.map((part) =>
         fetch(part.file)
@@ -134,18 +99,23 @@
           })
       )
     ).then(() => {
-      // script.js 読み込み（これが1回だけ）
+
+      // script.js を最後にロード（1回だけ）
       const mainScript = document.createElement("script");
       mainScript.src = "./script.js";
       document.body.appendChild(mainScript);
 
-      // partial 完了イベント
-      document.addEventListener("partialsLoaded", () => {
+      // partials 完了イベント発火
+      document.dispatchEvent(new Event("partialsLoaded"));
+    });
 
-      // セクションJSがあればここ
+    // ▼ partialsLoaded 後の処理
+    document.addEventListener("partialsLoaded", () => {
+
+      // section 個別JSをまとめて呼ぶ
       if (window.initSections) window.initSections();
 
-      // Swiper再初期化（DOM完成後）
+      // Swiper（DOM完成後に再初期化）
       new Swiper(".client-swiper", {
         navigation: {
           nextEl: ".swiper-button-next",
@@ -155,7 +125,6 @@
 
       // フェードイン
       document.body.classList.add("page-loaded");
-    });
     });
   </script>
 </body>
