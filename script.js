@@ -42,3 +42,20 @@ document.addEventListener("click", (e) => {
 // }
 
 // document.addEventListener("partialsLoaded", initSection3Swiper);
+
+document.addEventListener("partialsLoaded", () => {
+
+  // セクションJSがあればここ
+  if (window.initSections) window.initSections();
+
+  // Swiper再初期化（DOM完成後）
+  new Swiper(".client-swiper", {
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+  // フェードイン
+  document.body.classList.add("page-loaded");
+});

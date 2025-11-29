@@ -36,6 +36,13 @@
   --p16-20: clamp(1rem, 0.381vw + 0.907rem, 1.25rem);
 }
 
+body {
+  opacity: 0;
+  transition: opacity 0.6s ease; /* 0.6s くらいが自然 */
+}
+body.page-loaded {
+  opacity: 1;
+}
 
 /* =========================================
   1. Base
