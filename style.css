@@ -1,7 +1,6 @@
 /* =========================================
-  0. Root Variables（現在は無効化したい → コメントアウト）
+  0. Root Variables
 ========================================= */
-/*
 :root {
   --border: #efefef;
   --image-bg: #fdfdfd;
@@ -16,23 +15,11 @@
   --text-main: #58585d;
   --gray-main: #f2f2f2;
   --gray-light: #e6e6e6;
+  
   --font-jp: "Noto Sans JP", sans-serif;
   --font-allura: "Allura", cursive;
   --font-mulish: "Mulish", sans-serif;
-  --h2-font: normal 400 24px/28.8px var(--font-jp);
-  --h2-bold-desktop-font: normal 700 24px/28.8px var(--font-jp);
-  --h2-bold-mobile-font: normal 700 18px/34.2px var(--font-jp);
-  --body-desktop-font: normal 400 16px/19.2px var(--font-jp);
-  --body-s-font: normal 400 14px/16.8px var(--font-jp);
-  --body-mobile-font: normal 400 14px/16.8px var(--font-jp);
-  --h4-desktop-font: normal 700 18px/21.6px var(--font-jp);
-  --h4-mobile-font: normal 700 16px/25.6px var(--font-jp);
-  --link-normal-font: normal 400 16px/19.2px var(--font-jp);
-  --link-small-font: normal 400 12px/14.4px var(--font-jp);
-  --h2-subheading-ja-mobile-font: normal 700 14px/16.8px var(--font-jp);
-}
-*/
-:root {
+
   --s10-12: clamp(0.625rem, 0.328vw + 0.545rem, 0.75rem);
   --s10-16: clamp(0.625rem, 0.984vw + 0.385rem, 1rem);
 
@@ -89,22 +76,22 @@ body.page-loaded {
   1. Base
 ========================================= */
 body {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: var(--font-jp);
   margin: 0;
   padding: 0;
   background: #f5f5f5;
 }
 
 header, section, footer {
-  padding: 2rem;
+  /* padding: 2rem; */
 }
 
 header, footer {
-  background: #f0f0f0;
+  /* background: #f0f0f0; */
 }
 
 nav a {
-  margin-right: 1rem;
+  /* margin-right: 1rem; */
 }
 
 form input,
@@ -112,33 +99,17 @@ form textarea {
   display: block;
   margin-bottom: 1rem;
   width: 100%;
-  max-width: 400px;
+  
 }
 
 h1 {
-  color: red;
-  padding-inline: 2rem;
+  
 }
 
 h2 {
-  color: #4a48c6; /* 変数解除のため固定値に変更 */
-  font: normal 400 24px/28.8px "Noto Sans JP", sans-serif;
-  padding-block: 5rem;
+  
 }
 
-
-/* =========================================
-  2. Typography Utility
-========================================= */
-.ft-a { font-family: allura, sans-serif; }
-.ft-en { font-variation-settings: "wght" 1000; }
-.ft-ja { font-family: "Noto Sans JP", sans-serif; }
-
-.ft-cn {
-  font-size: 1.5rem;
-  color: #56c7f5;
-  line-height: 1.5;
-}
 
 
 /* =========================================
@@ -146,13 +117,11 @@ h2 {
 ========================================= */
 .site-header {
   width: 100%;
-  padding: 16px 24px;
   box-sizing: border-box;
-  border-bottom: 1px solid #eee;
 }
 
 .header-inner {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -160,13 +129,13 @@ h2 {
 }
 
 .header-logo img {
-  height: 32px;
+  
 }
 
 .header-nav {
   display: flex;
   align-items: center;
-  gap: 24px;
+  
 }
 
 
@@ -179,15 +148,14 @@ h2 {
 .menu-btn {
   background: none;
   border: none;
-  font-size: 15px;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 6px;
+  
 }
 
 .lang-btn img {
-  height: 14px;
+  
 }
 
 /* 親領域（hover トリガー）を広げる */
@@ -216,14 +184,14 @@ h2 {
 
 .lang-dropdown li,
 .menu-dropdown li {
-  padding: 8px 14px;
+  
   cursor: pointer;
   white-space: nowrap;
 }
 
 .lang-dropdown li:hover,
 .menu-dropdown li:hover {
-  background: #f5f5f5;
+  
 }
 
 /* ▼ hoverで開く（親ごと hover） */
@@ -240,12 +208,10 @@ h2 {
   5. Contact Button
 ========================================= */
 .contact-btn {
-  padding: 8px 16px;
-  background: #111;
+  padding: 8px 20px;
+  background: #665DF5;
   color: #fff;
   text-decoration: none;
-  border-radius: 4px;
-  font-size: 14px;
 }
 
 .contact-btn:hover {
