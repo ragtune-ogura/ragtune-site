@@ -228,8 +228,10 @@ h3 {
   
 }
 
-.lang-btn img, .lang-dropdown img {
-    width: 40px;
+@media screen and (min-width: 1000px) {
+  .lang-btn img, .lang-dropdown img {
+      width: 40px;
+  }
 }
 
 .lang-selector, .menu-selector {
