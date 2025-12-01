@@ -409,3 +409,24 @@ h3 {
     display: none !important;
   }
 }
+
+/* =========================================
+  8. section 1
+========================================= */
+section {
+    position: relative;
+    overflow: hidden;
+}
+img#s1-bg {
+    width: var(--s1-bg1);
+    max-width: var(--s1-bg1);
+    padding-inline-start: 32px;
+    margin-block-start: 100px;
+    position: absolute;
+    z-index: -1;
+}
+@media screen and (min-width: 1000px) {
+  img#s1-bg {
+      padding-inline-start: 35.77vw;
+  }
+}
