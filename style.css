@@ -206,7 +206,7 @@ h3 {
     padding-inline: var(--s16-32);
     background-color: #fff;
     border-radius: 60px;
-    box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.10);
+    box-shadow: var(--shadow-main);
     gap: var(--s16-40);
     font-family: var(--font-mulish);
     font-weight: 700;
@@ -254,26 +254,29 @@ h3 {
 
 
 /* ▼ dropdown 共通スタイル */
-.lang-dropdown,
-.menu-dropdown {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background: #fff;
-  border: 1px solid #ddd;
-  list-style: none;
-  padding: 8px 0;
-  margin: 0;
-  display: none;
-  min-width: 140px;
-  z-index: 200;
+.lang-dropdown, .menu-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #fff;
+    list-style: none;
+    margin: 0;
+    display: none;
+    z-index: 200;
+    padding-block: var(--s12-16);
+    padding-inline: var(--s16-22);
+    border-radius: 8px;
+    box-shadow: var(--shadow-main);
 }
 
 .lang-dropdown li,
 .menu-dropdown li {
-  
   cursor: pointer;
   white-space: nowrap;
+}
+.lang-dropdown li+li,
+.menu-dropdown li+li {
+    margin-top: var(--s10-12);
 }
 
 .hover-open>span {
@@ -290,6 +293,15 @@ h3 {
 
 .lang-selector:hover .lang-dropdown {
   display: block;
+}
+.lang-dropdown a, .menu-dropdown a {
+    text-decoration: none;
+    color: var(--text-main);
+    transition: var(--transition);
+    font-weight: 500;
+}
+.lang-dropdown a:hover, .menu-dropdown a:hover {
+    opacity: var(--opacity);
 }
 
 
