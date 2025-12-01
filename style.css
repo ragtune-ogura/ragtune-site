@@ -311,7 +311,7 @@ h3 {
   5. Contact Button
 ========================================= */
 .contact-btn {
-    font-size: var(--s16-20);
+    font-size: var(--s13-20);
     background: var(--primary-main);
     padding: 8px 20px;
     color: #fff;
