@@ -67,6 +67,11 @@
   --shadow-main: 5px 5px 15px 0 rgba(0, 0, 0, 0.10);
   --transition: opacity .2s cubic-bezier(.785,.135,.15,.86);
   --opacity: 0.7;
+
+  --s1-bg1: clamp(33.313rem, 49.619vw + 21.218rem, 65.875rem);
+  --s1-bg2: clamp(7.375rem, 13.524vw + 4.079rem, 16.25rem);
+  --s1-bg3: clamp(6.188rem, 11.048vw + 3.495rem, 13.438rem);
+
 }
 
 body {
