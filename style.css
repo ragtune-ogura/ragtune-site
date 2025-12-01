@@ -294,10 +294,15 @@ h3 {
   5. Contact Button
 ========================================= */
 .contact-btn {
-  padding: 8px 20px;
-  background: #665DF5;
-  color: #fff;
-  text-decoration: none;
+    font-size: var(--s16-20);
+    background: var(--primary-main);
+    padding: 8px 20px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    display: flex;
+    transition: var(--transition);
+    text-align: center;
 }
 
 .contact-btn:hover {
