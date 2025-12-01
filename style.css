@@ -20,6 +20,8 @@
   --font-allura: "Allura", cursive;
   --font-mulish: "Mulish", sans-serif;
 
+  --s4-10: clamp(0.25rem, 0.984vw + 0.01rem, 0.625rem);
+
   --s10-12: clamp(0.625rem, 0.328vw + 0.545rem, 0.75rem);
   --s10-16: clamp(0.625rem, 0.984vw + 0.385rem, 1rem);
 
@@ -231,8 +233,18 @@ h3 {
 
 .lang-selector, .menu-selector {
     position: relative;
-    display: inline-block;
+    display: flex;
     font-size: var(--s13-20);
+    align-items: center;
+    gap: var(--s4-10);
+}
+
+.lang-selector:after {
+    content: '';
+    display: block;
+    width: var(--s12-16);
+    height: var(--s12-16);
+    background-color: red;
 }
 
 
