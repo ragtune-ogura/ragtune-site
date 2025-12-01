@@ -62,7 +62,8 @@
 
   --s80-160: clamp(5rem, 13.115vw + 1.803rem, 10rem);
   
-  --shadow-main: 5px 5px 15px 0 rgba(0, 0, 0, 0.10)
+  --shadow-main: 5px 5px 15px 0 rgba(0, 0, 0, 0.10);
+  --transition: opacity .2s cubic-bezier(.785,.135,.15,.86);
 }
 
 body {
