@@ -329,3 +329,18 @@ h3 {
   height: 28px;
   color: #333;
 }
+
+/* =========================================
+  7. Media Queries
+========================================= */
+@media screen and (max-width: 999px) {
+  .md-up-only {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .md-down-only {
+    display: none !important;
+  }
+}
