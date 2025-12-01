@@ -142,6 +142,11 @@ h2:before {
     background: var(--primary-main);
     border-radius: 30px;
 }
+.s2-title-group>p {
+    font-size: var(--s16-24);
+    line-height: 2;
+}
+
 @media screen and (max-width: 999px) {
     h2:before {
         width: 15px;
