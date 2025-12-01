@@ -194,6 +194,7 @@ h3 {
     padding: var(--s16-20);
     width: 100vw;
     top: 0;
+    z-index: 5000;
 }
 
 .header-inner {
@@ -215,6 +216,11 @@ h3 {
     gap: var(--s16-40);
     font-family: var(--font-mulish);
     font-weight: 700;
+}
+@media screen and (min-width: 1000px) {
+  .site-header {
+    padding-inline-start: 50px;
+  }
 }
 
 
