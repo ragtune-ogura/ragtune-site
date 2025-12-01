@@ -276,10 +276,10 @@ h3 {
   white-space: nowrap;
 }
 
-.hover-open {
+.hover-open>span {
     transition: var(--transition);
 }
-.hover-open:hover {
+.hover-open:hover>span {
     opacity: var(--opacity);
 }
 
