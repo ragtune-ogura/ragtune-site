@@ -199,10 +199,6 @@ h3 {
   justify-content: space-between;
 }
 
-.header-logo img {
-  
-}
-
 .header-nav {
     display: flex;
     align-items: center;
