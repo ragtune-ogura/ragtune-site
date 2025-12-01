@@ -104,8 +104,12 @@ form input,
 form textarea {
   display: block;
   margin-bottom: 1rem;
-  width: 100%;
-  
+  width: 100%; 
+}
+
+body img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* =========================================
