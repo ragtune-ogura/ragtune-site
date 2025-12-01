@@ -33,7 +33,48 @@
 }
 */
 :root {
-  --p16-20: clamp(1rem, 0.381vw + 0.907rem, 1.25rem);
+  --s10-12: clamp(0.625rem, 0.328vw + 0.545rem, 0.75rem);
+  --s10-16: clamp(0.625rem, 0.984vw + 0.385rem, 1rem);
+
+  --s12-16: clamp(0.75rem, 0.656vw + 0.59rem, 1rem);
+
+  --s13-20: clamp(0.813rem, 1.148vw + 0.533rem, 1.25rem);
+
+  --s14-16: clamp(0.875rem, 0.328vw + 0.795rem, 1rem);
+  --s14-24: clamp(0.875rem, 1.639vw + 0.475rem, 1.5rem);
+
+  --s16-18: clamp(1rem, 0.328vw + 0.92rem, 1.125rem);
+  --s16-20: clamp(1rem, 0.381vw + 0.907rem, 1.25rem);
+  --s16-22: clamp(1rem, 0.984vw + 0.76rem, 1.375rem);
+  --s16-24: clamp(1rem, 1.311vw + 0.68rem, 1.5rem);
+  --s16-32: clamp(1rem, 2.623vw + 0.361rem, 2rem);
+  --s16-40: clamp(1rem, 3.934vw + 0.041rem, 2.5rem);
+
+  --s18-20: clamp(1.125rem, 0.328vw + 1.045rem, 1.25rem);
+  --s18-24: clamp(1.125rem, 0.984vw + 0.885rem, 1.5rem);
+  --s18-28: clamp(1.125rem, 1.639vw + 0.725rem, 1.75rem);
+
+  --s20-40: clamp(1.25rem, 3.279vw + 0.451rem, 2.5rem);
+
+  --s22-28: clamp(1.375rem, 0.984vw + 1.135rem, 1.75rem);
+  --s22-40: clamp(1.375rem, 2.951vw + 0.656rem, 2.5rem);
+  
+  --s24-48: clamp(1.5rem, 3.934vw + 0.541rem, 3rem);
+  
+  --s32-60: clamp(2rem, 4.59vw + 0.881rem, 3.75rem);
+
+  --s36-54: clamp(2.25rem, 2.951vw + 1.531rem, 3.375rem);
+
+  --s40-50: clamp(2.5rem, 1.639vw + 2.1rem, 3.125rem);
+
+  --s48-52: clamp(3rem, 0.656vw + 2.84rem, 3.25rem);
+  --s48-120: clamp(3rem, 11.803vw + 0.123rem, 7.5rem);
+
+  --s60-88: clamp(3.75rem, 4.59vw + 2.631rem, 5.5rem);
+  --s60-120: clamp(3.75rem, 9.836vw + 1.352rem, 7.5rem);
+
+  --s80-160: clamp(5rem, 13.115vw + 1.803rem, 10rem);
+  
 }
 
 body {
