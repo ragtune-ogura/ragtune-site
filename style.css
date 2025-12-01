@@ -417,16 +417,35 @@ section {
     position: relative;
     overflow: hidden;
 }
-img#s1-bg {
+section#section1 {
+    padding-inline: 2rem;
+}
+.s1-bg {
     width: var(--s1-bg1);
-    max-width: var(--s1-bg1);
-    padding-inline-start: 32px;
     margin-block-start: 100px;
     position: absolute;
     z-index: -1;
 }
+.s1-title-group {
+    margin-block-start: 53vw;
+}
+.s1-image-group {
+    position: absolute;
+    display: flex;
+    flex-flow: column;
+    right: 20px;
+    top: 110vw;
+}
+img.shp {
+    width: var(--s1-bg2);
+}
+img.spm {
+    width: var(--s1-bg3);
+    margin-left: 15vw;
+    margin-top: -8vw;
+}
 @media screen and (min-width: 1000px) {
-  img#s1-bg {
+  .s1-bg {
       padding-inline-start: 35.77vw;
   }
 }
