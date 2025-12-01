@@ -66,6 +66,7 @@
   
   --shadow-main: 5px 5px 15px 0 rgba(0, 0, 0, 0.10);
   --transition: opacity .2s cubic-bezier(.785,.135,.15,.86);
+  --opacity: 0.7;
 }
 
 body {
@@ -275,9 +276,11 @@ h3 {
   white-space: nowrap;
 }
 
-.lang-dropdown li:hover,
-.menu-dropdown li:hover {
-  
+.hover-open {
+    transition: var(--transition);
+}
+.hover-open:hover {
+    opacity: var(--opacity);
 }
 
 /* ▼ hoverで開く（親ごと hover） */
@@ -306,7 +309,7 @@ h3 {
 }
 
 .contact-btn:hover {
-  opacity: .85;
+  opacity: var(--opacity);
 }
 /* =========================================
   6. Client Swiper
