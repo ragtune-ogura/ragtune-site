@@ -421,10 +421,13 @@ section#section1 {
     padding-inline: 2rem;
 }
 .s1-bg {
-    width: var(--s1-bg1);
-    margin-block-start: 100px;
+    width: 100vw;
+    margin-block-start: 130px;
     position: absolute;
     z-index: -1;
+}
+img#s1-bg {
+    min-width: 73.1vw;
 }
 .s1-title-group {
     margin-block-start: 53vw;
@@ -447,5 +450,7 @@ img.spm {
 @media screen and (min-width: 1000px) {
   .s1-bg {
       padding-inline-start: 35.77vw;
+      margin-block-start: 130px;
   }
+  
 }
