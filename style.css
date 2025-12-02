@@ -132,6 +132,7 @@ p {
 h1, h2, h3 {
     font-family: var(--font-mulish);
     font-weight: 1000;
+    margin-block: (--m-block, 0);
 }
 h1 {
     font-size: var(--s24-48);
@@ -221,6 +222,9 @@ h3 {
     gap: var(--s16-40);
     font-family: var(--font-mulish);
     font-weight: 700;
+}
+.header-logo>a {
+    display: flex;
 }
 @media screen and (min-width: 1000px) {
   .site-header {
@@ -417,40 +421,42 @@ section {
     position: relative;
     overflow: hidden;
 }
-section#section1 {
+
+#section1 {
     padding-inline: 2rem;
+    margin-block-start: 92px;
 }
 .s1-bg {
-    width: 100vw;
-    margin-block-start: 130px;
+    margin-block-start: 0;
     position: absolute;
     z-index: -1;
+    min-width: 136vw;
+    left: max(2rem,8.2vw);
 }
-img#s1-bg {
-    min-width: 73.1vw;
-}
+
 .s1-title-group {
-    margin-block-start: 53vw;
+    margin-block-start: 24.6vw;
 }
+.s1-title-group>*+* {
+    margin-block-start: var(--s32-60);
+}
+
 .s1-image-group {
-    position: absolute;
     display: flex;
     flex-flow: column;
-    right: 20px;
-    top: 110vw;
+    margin-block-start: 15vw;
+    margin-inline: auto -1.3rem;
+    align-items: flex-end;
 }
-img.shp {
-    width: var(--s1-bg2);
+
+
+@media screen and (max-width: 999px) {
+
 }
-img.spm {
-    width: var(--s1-bg3);
-    margin-left: 15vw;
-    margin-top: -8vw;
-}
+
 @media screen and (min-width: 1000px) {
   .s1-bg {
       padding-inline-start: 35.77vw;
       margin-block-start: 130px;
   }
-  
 }
