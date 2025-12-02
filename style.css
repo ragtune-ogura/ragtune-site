@@ -444,7 +444,7 @@ section {
 .s1-image-group {
     display: flex;
     flex-flow: column;
-    margin-block-start: 15vw;
+    margin-block-start: 11vw;
     margin-inline: auto -1.3rem;
     align-items: flex-end;
 }
@@ -455,8 +455,33 @@ section {
 }
 
 @media screen and (min-width: 1000px) {
+  #section1 {
+    padding-inline: 0;
+    margin-block-start: 123px;
+  }
   .s1-bg {
-      padding-inline-start: 35.77vw;
-      margin-block-start: 130px;
+    left: 35.77vw;
+    margin-block-start: 26px;
+    min-width: 73.2vw;
+  }
+  .s1-bg>img {
+    min-width: 100%;
+  }
+  .s1-title-group {
+    margin-block-start: 17.2vw;
+    width: max-content;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1279px) {
+  .s1-title-group {
+    margin-inline-start: 0;
+    transform: scale(0.8);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .s1-title-group {
+    margin-inline-start: 13.9vw;
   }
 }
