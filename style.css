@@ -250,7 +250,7 @@ h3 {
 
 @media screen and (min-width: 1000px) {
   .lang-btn img, .lang-dropdown img {
-      width: 40px;
+      min-width: 40px;
   }
 }
 
