@@ -441,17 +441,15 @@ section {
     margin-block-start: var(--s32-60);
 }
 
-.s1-image-group {
+
+@media screen and (max-width: 999px) {
+  .s1-image-group {
     display: flex;
     flex-flow: column;
     margin-block-start: 11vw;
     margin-inline: auto -1.3rem;
     align-items: flex-end;
-}
-
-
-@media screen and (max-width: 999px) {
-
+  }
 }
 
 @media screen and (min-width: 1000px) {
@@ -469,6 +467,11 @@ section {
   }
   .s1-title-group {
     margin-block-start: 17.2vw;
+    width: max-content;
+  }
+  .s1-image-group {
+    margin-block-start: -23vw;
+    margin-inline: auto 14.2vw;
     width: max-content;
   }
 }
