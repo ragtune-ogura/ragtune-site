@@ -488,3 +488,10 @@ section {
     margin-inline-start: 13.9vw;
   }
 }
+
+@media screen and (min-width: 1600px) {
+  .s1-image-group {
+    margin-block-start: -20vw;
+    padding-block-end: 9vw;
+  }
+}
