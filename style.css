@@ -641,6 +641,7 @@ section {
     overflow: hidden;
     margin-block-start: -6vw;
     min-height: 725px;
+    z-index: 1;
   }
   .s2-title-group {
     padding-inline: 2rem;
@@ -664,6 +665,8 @@ section {
     grid-template-columns: 38.5vw 1fr;
     align-items: center;
     justify-content: flex-start;
+    margin-block-start: -2vw;
+    margin-block-end: 160px;
   }
   .s2-image-group {
     overflow: hidden;
@@ -691,6 +694,11 @@ section {
 }
 .client-swiper {
     padding-block-end: var(--s48-120);
+}
+@media screen and (max-width: 767px) {
+  #section3 {
+    margin-block-start: -8vw;
+  }
 }
 @media screen and (min-width: 1000px) {
   #section3 {
