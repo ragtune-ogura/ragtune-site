@@ -488,6 +488,7 @@ h3 {
 
 .client-swiper-controls {
     --control-gap: clamp(1.5rem, 4.59vw + 0.381rem, 3.25rem);
+    --swiper-navigation-size: 40px;
     display: flex;
     justify-content: center;
     gap: 0;
