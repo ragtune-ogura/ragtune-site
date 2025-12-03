@@ -512,12 +512,29 @@ section {
     margin-block-start: 2em;
 }
 
-@media screen and (max-width: 999px) {
+@media screen and (max-width: 767px) {
+  #section2 {
+    display: flex;
+    flex-flow: column-reverse wrap;
+    overflow: hidden;
+    margin-block-start: -6vw;
+    min-height: 725px;
+  }
   .s2-title-group {
     padding-inline: 2rem;
   }
+  .s2-image-group {
+    margin-block-start: -60vw;
+    z-index: -1;
+    max-width: 100%;
+    min-height: 616px;
+  }
+  .s2-image-group>img {
+    min-width: 111.2vw;
+    margin-inline-start: -11.2vw;
+  }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 768px) {
   
 }
