@@ -43,27 +43,64 @@ document.addEventListener("click", (e) => {
 
 // document.addEventListener("partialsLoaded", initSection3Swiper);
 
+// document.querySelectorAll('.menu-dropdown li > a').forEach(link => {
+//   link.addEventListener('click', function(e) {
+//     e.preventDefault();
+
+//     const targetId = this.getAttribute('href').replace('#', '');
+//     const target = document.getElementById(targetId);
+
+//     if (!target) return;
+
+//     // 画面幅によるオフセット
+//     const offset = window.innerWidth <= 999 ? 92 : 113;
+
+//     // 対象位置
+//     const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+
+//     // 実際にスクロールする位置
+//     const scrollTo = targetPosition - offset;
+
+//     window.scrollTo({
+//       top: scrollTo,
+//       behavior: 'smooth'
+//     });
+//   });
+// });
+
 document.querySelectorAll('.menu-dropdown li > a').forEach(link => {
   link.addEventListener('click', function(e) {
-    e.preventDefault();
+    const href = this.getAttribute('href');
 
-    const targetId = this.getAttribute('href').replace('#', '');
-    const target = document.getElementById(targetId);
+    // TOP にいる場合だけ内部リンクに変換してスムーススクロール
+    if (location.pathname === '/ragtune-site/' && href.startsWith('/ragtune-site/#')) {
+      e.preventDefault();
 
-    if (!target) return;
+      const targetId = href.split('#')[1];
+      const target = document.getElementById(targetId);
+      if (!target) return;
 
-    // 画面幅によるオフセット
-    const offset = window.innerWidth <= 999 ? 92 : 113;
+      const offset = window.innerWidth <= 999 ? 92 : 113;
+      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+      const scrollTo = targetPosition - offset;
 
-    // 対象位置
-    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({ top: scrollTo, behavior: 'smooth' });
+      return;
+    }
 
-    // 実際にスクロールする位置
-    const scrollTo = targetPosition - offset;
+    // 既存の「hrefが#から始まる内部リンクならスムーススクロール」処理
+    if (href.startsWith('#')) {
+      e.preventDefault();
 
-    window.scrollTo({
-      top: scrollTo,
-      behavior: 'smooth'
-    });
+      const targetId = href.replace('#', '');
+      const target = document.getElementById(targetId);
+      if (!target) return;
+
+      const offset = window.innerWidth <= 999 ? 92 : 113;
+      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+      const scrollTo = targetPosition - offset;
+
+      window.scrollTo({ top: scrollTo, behavior: 'smooth' });
+    }
   });
 });
