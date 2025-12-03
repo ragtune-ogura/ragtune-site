@@ -761,5 +761,10 @@ section {
 #section4 {
     padding-block-start: var(--s80-160);
     padding-block-end: var(--s120-160);
-    padding-inline: max(2rem,calc((100vw - 1200px) / 2));
+    padding-inline: 2rem;
+}
+@media screen and (min-width: 1000px) {
+  #section4 {
+    padding-inline: 120px;
+  }
 }
