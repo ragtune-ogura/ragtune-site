@@ -855,9 +855,20 @@ footer h4+a>span {
     color: var(--text-dark);
 }
 .footer-lancers {
+    --logo-size: clamp(6.25rem, 3.279vw + 5.451rem, 7.5rem);
     margin-block-start: 24px;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--border);
+    width: fit-content;
+    margin-inline: auto;
+    padding: .5rem 1rem;
+    border-radius: 3rem;
 }
+.footer-lancers img {
+    width: var(--logo-size);
+} 
 .footer-nav, .footer-copy {
     font-size: var(--s10-12);
 }
