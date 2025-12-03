@@ -520,6 +520,7 @@ h3 {
     padding-inline: calc((100vw - 1000px) / 2);
   }
   .client-swiper .swiper-slide {
+    width: max(700px, 48.6vw);
     overflow: visible;
     flex-direction: row;
     align-items: center;
