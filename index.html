@@ -236,6 +236,15 @@
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
+      spaceBetween: 16, // ← デフォルト（モバイル）
+      breakpoints: {
+        768: {
+          spaceBetween: 32,
+        },
+        1280: {
+          spaceBetween: 100,
+        },
+      },
 
       on: {
         init: function () {
