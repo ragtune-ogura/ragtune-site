@@ -1,28 +1,45 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>特定商取引法に基づく表記｜サイト名</title>
-  <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>特定商取引法に基づく表記｜Ragtune Shopify Studio</title>
 
-  <!-- 共通 head include（メタ系を壊さないように body に追加） -->
-  <script>
-    fetch('./partials/head-include.html')
-      .then(res => res.text())
-      .then(html => {
-        document.body.insertAdjacentHTML('afterbegin', html);
-      });
-  </script>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="icon" href="./images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="./images/apple-icon-180.png" sizes="180x180">
 </head>
-
 <body>
+
   <div id="header-include"></div>
 
-  <main class="page-content">
-    <!-- ここに privacy or law の本文を書く -->
+  <main class="page-wrapper" style="max-width: 900px; margin: 120px auto; padding-inline: 20px;">
     <h1>特定商取引法に基づく表記</h1>
-    <p>…本文…</p>
+
+    <h2>事業者名</h2>
+    <p>Ragtune Shopify Studio（小倉氏の名前でも可）</p>
+
+    <h2>所在地</h2>
+    <p>お問い合わせいただいた際に遅滞なく開示いたします。</p>
+
+    <h2>連絡先</h2>
+    <p>Email：◯◯◯（あなたの事業用メール）</p>
+
+    <h2>販売価格</h2>
+    <p>提供するサービス内容ごとに見積もりを提示いたします。</p>
+
+    <h2>商品代金以外の必要料金</h2>
+    <p>銀行振込手数料、通信費などはお客様負担となります。</p>
+
+    <h2>支払時期・方法</h2>
+    <p>銀行振込／クレジット決済（Stripe等）。お見積もり時に案内いたします。</p>
+
+    <h2>サービス提供時期</h2>
+    <p>契約締結後、別途定めたスケジュールに基づき提供します。</p>
+
+    <h2>返品・キャンセル</h2>
+    <p>デジタルサービスの特性上、作業着手後のキャンセルは原則不可となります。</p>
+
   </main>
 
   <div id="footer-include"></div>
@@ -35,18 +52,12 @@
 
     Promise.all(
       includes.map(part =>
-        fetch(part.file)
-          .then(res => res.text())
-          .then(html => {
-            document.getElementById(part.id).innerHTML = html;
-          })
+        fetch(part.file).then(res => res.text()).then(html => {
+          document.getElementById(part.id).innerHTML = html;
+        })
       )
-    ).then(() => {
-      // 共通スクリプト（header.js）を include 後に読み込む
-      const s = document.createElement("script");
-      s.src = "./script.js";
-      document.body.appendChild(s);
-    });
+    );
   </script>
+
 </body>
 </html>

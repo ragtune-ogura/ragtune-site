@@ -1,32 +1,50 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>プライバシーポリシー｜サイト名</title>
-  <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>プライバシーポリシー｜Ragtune Shopify Studio</title>
 
-  <!-- 共通 head include（メタ系を壊さないように body に追加） -->
-  <script>
-    fetch('./partials/head-include.html')
-      .then(res => res.text())
-      .then(html => {
-        document.body.insertAdjacentHTML('afterbegin', html);
-      });
-  </script>
+  <!-- 共通CSSとフォント -->
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="icon" href="./images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="./images/apple-icon-180.png" sizes="180x180">
+
 </head>
-
 <body>
+
+  <!-- 共通ヘッダー -->
   <div id="header-include"></div>
 
-  <main class="page-content">
-    <!-- ここに privacy or law の本文を書く -->
+  <main class="page-wrapper" style="max-width: 900px; margin: 120px auto; padding-inline: 20px;">
     <h1>プライバシーポリシー</h1>
-    <p>…本文…</p>
+
+    <p>Ragtune Shopify Studio（以下、「当サイト」）は、ユーザーの個人情報を適切に管理し、以下の方針に基づいて取り扱います。</p>
+
+    <h2>1. 収集する情報</h2>
+    <p>お問い合わせフォーム等で、氏名・メールアドレス・その他の任意情報を収集する場合があります。</p>
+
+    <h2>2. 情報の利用目的</h2>
+    <p>お問い合わせへの回答、サービス案内、業務遂行のために利用します。</p>
+
+    <h2>3. 情報の管理</h2>
+    <p>取得した個人情報は適切に管理し、第三者へ提供することはありません（法令要求時を除く）。</p>
+
+    <h2>4. Cookie（クッキー）について</h2>
+    <p>当サイトではアクセス解析のために Cookie を利用する場合があります。</p>
+
+    <h2>5. 免責事項</h2>
+    <p>当サイトからの外部リンク先での情報管理については責任を負いません。</p>
+
+    <h2>6. お問い合わせ</h2>
+    <p>ポリシーに関するお問い合わせは、当サイト運営者までご連絡ください。</p>
+
   </main>
 
+  <!-- 共通フッター -->
   <div id="footer-include"></div>
 
+  <!-- common include loader -->
   <script>
     const includes = [
       { id: "header-include", file: "./partials/header.html" },
@@ -35,18 +53,12 @@
 
     Promise.all(
       includes.map(part =>
-        fetch(part.file)
-          .then(res => res.text())
-          .then(html => {
-            document.getElementById(part.id).innerHTML = html;
-          })
+        fetch(part.file).then(res => res.text()).then(html => {
+          document.getElementById(part.id).innerHTML = html;
+        })
       )
-    ).then(() => {
-      // 共通スクリプト（header.js）を include 後に読み込む
-      const s = document.createElement("script");
-      s.src = "./script.js";
-      document.body.appendChild(s);
-    });
+    );
   </script>
+
 </body>
 </html>
