@@ -359,6 +359,7 @@ h3 {
 ========================================= */
 .swiper.client-swiper {
     padding-inline: 2rem;
+    padding-block-end: var(--s48-120);
 }
 
 .client-swiper .swiper-slide {
@@ -503,6 +504,9 @@ h3 {
 }
 .client-swiper-controls>span {
     display: flex;
+}
+.swiper-counter {
+    display: none;
 }
 @media screen and (max-width: 767px) {
   .client-swiper .swiper-wrapper {
