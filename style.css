@@ -522,6 +522,7 @@ h3 {
   .client-image {
     border-radius: 24px;
     overflow: hidden;
+    box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.10);
   }
   .client-meta {
     flex: unset;
