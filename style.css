@@ -405,6 +405,18 @@ h3 {
 /* =========================================
   7. Media Queries
 ========================================= */
+@media screen and (max-width: 767px) {
+  .sm-up-only {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .sm-down-only {
+    display: none !important;
+  }
+}
+
 @media screen and (max-width: 999px) {
   .md-up-only {
     display: none !important;
@@ -536,5 +548,22 @@ section {
 }
 
 @media screen and (min-width: 768px) {
-  
+  #section2 {
+    margin-inline: 0 max(8.3vw,20px);
+    display: grid;
+    grid-template-columns: 38.5vw 1fr;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .s2-image-group {
+    overflow: hidden;
+    padding-inline-end: 4.6vw;
+  }
+  .s2-image-group>img {
+    min-width: 105%;
+    margin-inline-start: -5%;
+  }
+  .s2-title-group {
+    padding-block-start: min(8rem,9vw);
+  }
 }
