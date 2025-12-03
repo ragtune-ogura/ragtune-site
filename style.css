@@ -753,7 +753,7 @@ section {
 }
 @media screen and (min-width: 1000px) {
   #section3 {
-    padding-inline: 120px;
+    padding-inline: max(120px, calc((100vw - 1200px)/2));
   }
 }
 
@@ -801,7 +801,7 @@ section {
 }
 @media screen and (min-width: 1000px) {
   #section4 {
-    padding-inline: 120px;
+    padding-inline: max(120px, calc((100vw - 1200px)/2));
   }
   .tailored-section-contents {
     grid-template-columns: repeat(2,minmax(0,1fr));
