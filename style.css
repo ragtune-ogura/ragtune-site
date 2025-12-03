@@ -517,10 +517,10 @@ h3 {
 }
 @media screen and (min-width: 768px) {
   .swiper.client-swiper {
-    padding-inline: calc((100vw - 1000px) / 2);
+    padding-inline: max(120px,calc((100vw - 1000px) / 2));
   }
   .client-swiper .swiper-slide {
-    width: max(700px, 48.6vw);
+    width: min(700px,48.6vw);
     overflow: visible;
     flex-direction: row;
     align-items: center;
