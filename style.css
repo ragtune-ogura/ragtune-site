@@ -247,6 +247,9 @@ h3 {
   align-items: center;
   
 }
+.lang-dropdown img {
+    min-width: 33px;
+}
 
 @media screen and (min-width: 1000px) {
   .lang-btn img, .lang-dropdown img {
