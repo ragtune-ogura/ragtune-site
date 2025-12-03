@@ -763,6 +763,15 @@ section {
     padding-block-end: var(--s120-160);
     padding-inline: 2rem;
 }
+
+.tailored-section>h4 {
+    margin-block: var(--s60-120);
+    text-align: center;
+    font-size: var(--s16-18);
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
 @media screen and (min-width: 1000px) {
   #section4 {
     padding-inline: 120px;
