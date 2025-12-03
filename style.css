@@ -432,6 +432,7 @@ h3 {
 .client_name {
     margin-block-start: var(--s14-16);
     font-size: var(--s22-28);
+    line-height: var(--s22-28);
     margin-inline: 0;
     font-family: 'Mulish', 'Noto Sans JP', sans-serif;
     color: var(--text-dark);
@@ -440,7 +441,9 @@ h3 {
 
 .business {
     margin-inline: 0;
+    margin-block-start: 2px;
     font-size: var(--s14-16);
+    line-height: var(--s14-16);
     font-weight: 400;
 }
 
