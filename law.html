@@ -83,8 +83,12 @@
             document.getElementById(part.id).innerHTML = html;
           })
       )
-    );
+    ).then(() => {
+      // ▼ ここで実行するのが正しい
+      document.body.classList.add("page-loaded");
+    });
   </script>
+
 
 </body>
 </html>

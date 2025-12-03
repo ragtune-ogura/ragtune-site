@@ -53,12 +53,18 @@
 
     Promise.all(
       includes.map(part =>
-        fetch(part.file).then(res => res.text()).then(html => {
-          document.getElementById(part.id).innerHTML = html;
-        })
+        fetch(part.file)
+          .then(res => res.text())
+          .then(html => {
+            document.getElementById(part.id).innerHTML = html;
+          })
       )
-    );
+    ).then(() => {
+      // ▼ ここで実行するのが正しい
+      document.body.classList.add("page-loaded");
+    });
   </script>
+
 
 </body>
 </html>
