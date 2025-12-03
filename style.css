@@ -187,6 +187,12 @@ h3 {
     font-size: var(--s14-24);
     font-weight: 700;
 }
+.section-header-group h2+h3 {
+    margin-block-start: var(--s16-32);
+}
+.section-header-group h3+p {
+    margin-block-start: var(--s12-16);
+}
 
 
 
