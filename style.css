@@ -878,3 +878,16 @@ footer>img {
     bottom: calc(5rem + 1vw);
     right: 12px;
 }
+
+/* =========================================
+  13. Pages (Law & Privacy)
+========================================= */
+.page-wrapper {
+    margin-block: var(--s120-160);
+    padding-inline: max(2rem, calc((100vw - 800px)/2));
+}
+.page-wrapper>h1 {
+    font-size: var(--s22-40);
+    color: var(--text-dark);
+    margin-block: 0 var(--s24-48);
+}
