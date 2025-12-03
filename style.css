@@ -910,3 +910,9 @@ footer>img {
 .law-table dd+dt {
     margin-block-start: var(--s16-20);
 }
+p.bold {
+    font-weight: 700;
+    margin-block: var(--s22-28) .25rem;
+    font-size: var(
+    --s16-20);
+}
