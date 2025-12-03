@@ -42,3 +42,28 @@ document.addEventListener("click", (e) => {
 // }
 
 // document.addEventListener("partialsLoaded", initSection3Swiper);
+
+document.querySelectorAll('.menu-dropdown li > a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const targetId = this.getAttribute('href').replace('#', '');
+    const target = document.getElementById(targetId);
+
+    if (!target) return;
+
+    // 画面幅によるオフセット
+    const offset = window.innerWidth <= 999 ? 92 : 113;
+
+    // 対象位置
+    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+
+    // 実際にスクロールする位置
+    const scrollTo = targetPosition - offset;
+
+    window.scrollTo({
+      top: scrollTo,
+      behavior: 'smooth'
+    });
+  });
+});
