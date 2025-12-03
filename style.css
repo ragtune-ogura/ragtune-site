@@ -891,3 +891,22 @@ footer>img {
     color: var(--text-dark);
     margin-block: 0 var(--s24-48);
 }
+.law-table {
+    margin: 0 !important;
+}
+.law-table * {
+    line-height: 1.6;
+    color: inherit;
+}
+.law-table dt {
+    font-weight: 700;
+}
+.law-table dd {
+    margin-inline: 0;
+    margin-block-start: var(--s4-10);
+    padding-block-end: 4px;
+    border-bottom: 1px solid var(--text-main);
+}
+.law-table dd+dt {
+    margin-block-start: var(--s16-20);
+}
