@@ -373,9 +373,7 @@ h3 {
     box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.10);
 }
 
-.client-swiper .swiper-slide-active,
-.client-swiper .swiper-slide-next,
-.client-swiper .swiper-slide-prev {
+.client-swiper .swiper-slide-active {
   opacity: 1;
 }
 
@@ -444,7 +442,7 @@ h3 {
 
 .business {
     margin-inline: 0;
-    margin-block-start: 2px;
+    margin-block-start: 6px;
     font-size: var(--s14-16);
     line-height: var(--s14-16);
     font-weight: 400;
