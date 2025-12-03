@@ -517,7 +517,12 @@ h3 {
     overflow: visible;
     flex-direction: row;
     position: relative;
-    }
+    box-shadow: none;
+  }
+  .client-image {
+    border-radius: 24px;
+    overflow: hidden;
+  }
   .client-meta {
     flex: unset;
     width: 380px;
@@ -527,6 +532,11 @@ h3 {
     z-index: 3;
     top: 50%;
     transform: translateY(-50%);
+    opacity: 0;
+  }
+  .client-swiper .swiper-slide-active .client-meta {
+    opacity: 1;
+    transition: opacity .3s ease .3s; 
   }
 }
 
