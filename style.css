@@ -499,11 +499,11 @@ h3 {
 .swiper-button-next,
 .swiper-button-prev {
   position: static !important;
-  width: 28px;
-  height: 28px;
-  color: #333;
+  margin: 0 !important;
 }
-
+.client-swiper-controls>span {
+    display: flex;
+}
 @media screen and (max-width: 767px) {
   .client-swiper .swiper-wrapper {
     padding-block-end: 20px;
