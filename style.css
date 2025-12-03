@@ -362,12 +362,14 @@ h3 {
 }
 
 .client-swiper .swiper-slide {
-  box-sizing: border-box;
-  opacity: .2;
-  transition: opacity .3s ease;
-  border-radius: 24px;
-  display: flex;
-  flex-direction: column;
+    box-sizing: border-box;
+    opacity: .2;
+    transition: opacity .3s ease;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.10);
 }
 
 .client-swiper .swiper-slide-active,
