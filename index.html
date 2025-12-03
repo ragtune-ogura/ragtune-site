@@ -179,6 +179,9 @@
       <span><img src="./images/swipe-arrow-devider.svg"></span>
       <div class="swiper-button-next"></div>
     </div>
+
+    <!-- counter -->
+   <div class="swiper-counter"><span class="current">1</span>/<span class="total">1</span></div>
   </div>
 
   <div id="section4-include"></div>
@@ -225,12 +228,34 @@
       if (window.initSections) window.initSections();
 
       // Swiper（DOM完成後に再初期化）
-      new Swiper(".client-swiper", {
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
+      const swiper = new Swiper(".client-swiper", {
+      loop: true,
+      centeredSlides: true,
+      slidesPerView: "auto", // または 1・3など用途に応じて
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+
+      on: {
+        init: function () {
+          const total = document.querySelector(".swiper-counter .total");
+          total.textContent = this.slides.length - this.loopedSlides * 2; 
+          updateCounter(this);
         },
-      });
+        slideChange: function () {
+          updateCounter(this);
+        },
+      },
+    });
+
+    function updateCounter(swiper) {
+      const current = document.querySelector(".swiper-counter .current");
+
+      // loop使用時、realIndex を使う
+      current.textContent = swiper.realIndex + 1;
+    }
+
 
       // フェードイン
       document.body.classList.add("page-loaded");
