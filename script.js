@@ -68,36 +68,23 @@ document.addEventListener("click", (e) => {
 //   });
 // });
 
-document.querySelectorAll('.anchor-link').forEach(link => {
-  link.addEventListener('click', function(e) {
-    const href = this.getAttribute('href'); // "#about" など
+// ページロード後、自動スクロール処理
+window.addEventListener('load', () => {
+  const params = new URLSearchParams(window.location.search);
+  const targetId = params.get('scroll'); // "about" など
 
-    // 今のページがトップかどうか判定
-    const isTopPage =
-      location.pathname === '/' ||
-      location.pathname === '/index.html';
+  if (targetId) {
+    const target = document.getElementById(targetId);
+    if (!target) return;
 
-    if (isTopPage) {
-      // ---- TOP ページではスムーススクロール ----
-      e.preventDefault();
+    const offset = window.innerWidth <= 999 ? 92 : 113;
+    const targetPosition =
+      target.getBoundingClientRect().top + window.pageYOffset;
+    const scrollTo = targetPosition - offset;
 
-      const targetId = href.replace('#', '');
-      const target = document.getElementById(targetId);
-      if (!target) return;
-
-      const offset = window.innerWidth <= 999 ? 92 : 113;
-      const targetPosition =
-        target.getBoundingClientRect().top + window.pageYOffset;
-      const scrollTo = targetPosition - offset;
-
-      window.scrollTo({
-        top: scrollTo,
-        behavior: 'smooth'
-      });
-    } else {
-      // ---- 他ページではTOPへ遷移しつつアンカー飛びを発火 ----
-      // me.ragtune.com/#about に飛べばブラウザが自動ジャンプする
-      location.href = '/#' + href.replace('#', '');
-    }
-  });
+    window.scrollTo({
+      top: scrollTo,
+      behavior: 'smooth'
+    });
+  }
 });
