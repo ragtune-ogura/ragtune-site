@@ -69,36 +69,26 @@ document.addEventListener("click", (e) => {
 // });
 
 document.querySelectorAll('.menu-dropdown li > a').forEach(link => {
-  link.addEventListener('click', function (e) {
+  link.addEventListener('click', function(e) {
     const href = this.getAttribute('href');
 
-    // --- 現在がTOPページかどうかを判定 ---
-    const isTopPage =
-      location.pathname === '/ragtune-site/' ||
-      location.pathname === '/ragtune-site' ||
-      location.pathname.endsWith('/ragtune-site/index.html');
-
-    // --- クリックしたリンクがTOPページ内のアンカーかどうか ---
-    const isInternalAnchor = href.startsWith('/ragtune-site/#');
-
-    if (isTopPage && isInternalAnchor) {
+    // 内部アンカーのみスムーススクロール
+    if (href.startsWith('#')) {
       e.preventDefault();
 
-      const targetId = href.split('#')[1];
+      const targetId = href.replace('#', '');
       const target = document.getElementById(targetId);
       if (!target) return;
 
       const offset = window.innerWidth <= 999 ? 92 : 113;
-      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+      const targetPosition =
+        target.getBoundingClientRect().top + window.pageYOffset;
       const scrollTo = targetPosition - offset;
 
       window.scrollTo({
         top: scrollTo,
         behavior: 'smooth'
       });
-      return;
     }
-
-    // TOP以外のページでは普通にページ遷移する（/#about に移動）
   });
 });
