@@ -21,6 +21,7 @@
   --font-mulish: "Mulish", sans-serif;
 
   --s4-10: clamp(0.25rem, 0.984vw + 0.01rem, 0.625rem);
+  --s4-12: clamp(0.25rem, 1.311vw + 0.01rem, 0.75rem);
 
   --s10-12: clamp(0.625rem, 0.328vw + 0.545rem, 0.75rem);
   --s10-16: clamp(0.625rem, 0.984vw + 0.385rem, 1rem);
@@ -67,6 +68,7 @@
   --s120-160: clamp(7.5rem, 6.557vw + 5.901rem, 10rem);
   
   --shadow-main: 5px 5px 15px 0 rgba(0, 0, 0, 0.10);
+  
   --transition: opacity .2s cubic-bezier(.785,.135,.15,.86);
   --opacity: 0.7;
 
@@ -372,7 +374,7 @@ h3 {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.10);
+    box-shadow: var(--shadow-main);
 }
 
 .client-swiper .swiper-slide-active {
@@ -543,7 +545,7 @@ h3 {
     left: calc(100% - 80px);
     z-index: 3;
     opacity: 0;
-    box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.10);
+    box-shadow: var(--shadow-main);
     border-radius: 24px;
   }
   .client-swiper .swiper-slide-active .client-meta {
@@ -771,7 +773,32 @@ section {
     color: var(--text-dark);
     font-weight: 700;
 }
-
+.tailored-section-contents {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 40px;
+    text-align: center;
+}
+.tailored-section-contents li {
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+    gap: 1rem;
+}
+.tailored-section-contents img {
+    box-shadow: var(--shadow-main);
+    border-radius: 24px;
+}
+.tailored-section-contents h5 {
+    font-size: var(--s18-20);
+    color: var(--text-dark);
+    margin: 0;
+}
+.tailored-section-contents h5+p {
+    margin-block-start: var(--s4-12);
+    font-size: 14px;
+    font-weight: 400;
+}
 @media screen and (min-width: 1000px) {
   #section4 {
     padding-inline: 120px;
