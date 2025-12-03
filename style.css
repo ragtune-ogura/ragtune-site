@@ -506,12 +506,18 @@ h3 {
 .swiper-counter {
     display: none;
 }
+.client-swiper-controls svg {
+    display: none;
+}
 @media screen and (max-width: 767px) {
   .client-swiper .swiper-wrapper {
     padding-block-end: 20px;
   }
 }
 @media screen and (min-width: 768px) {
+  .swiper.client-swiper {
+    padding-inline: calc((100vw - 1000px) / 2);
+  }
   .client-swiper .swiper-slide {
     width: max(48.6vw, 700px);
     overflow: visible;
@@ -540,6 +546,15 @@ h3 {
   .client-swiper .swiper-slide-active .client-meta {
     opacity: 1;
     transition: opacity .3s ease .3s; 
+  }
+  .client-swiper-controls {
+    --swiper-navigation-size: 50px;
+  }
+  .client-swiper-controls>span {
+    width: 50px;
+  }
+  .client-swiper-controls img {
+    width: 100%;
   }
 }
 
