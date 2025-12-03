@@ -522,6 +522,8 @@ h3 {
   .client-swiper .swiper-slide {
     overflow: visible;
     flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
     position: relative;
     box-shadow: none;
   }
@@ -532,13 +534,11 @@ h3 {
   }
   .client-meta {
     flex: unset;
-    width: 380px;
+    width: 100%;
+    max-width: 300px;
     position: absolute;
-    right: -14vw;
-    right: -80px;
+    left: calc(100% - 80px);
     z-index: 3;
-    top: 50%;
-    transform: translateY(-50%);
     opacity: 0;
     box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.10);
     border-radius: 24px;
