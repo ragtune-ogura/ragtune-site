@@ -68,10 +68,50 @@ document.addEventListener("click", (e) => {
 //   });
 // });
 
-// ページロード後、自動スクロール処理
+document.querySelectorAll('.menu-dropdown li > a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+
+    // ?scroll=xxx の場合のみ処理
+    if (!href.includes('?scroll=')) return;
+
+    e.preventDefault();
+
+    const targetId = href.split('=')[1];
+
+    // 現在が TOP ページかどうか
+    const isTopPage =
+      location.pathname === '/' ||
+      location.pathname === '/index.html';
+
+    if (isTopPage) {
+      // ▼▼ TOP ページ → その場で即スクロール ▼▼
+      const target = document.getElementById(targetId);
+      if (target) {
+        const offset = window.innerWidth <= 999 ? 92 : 113;
+        const targetPosition =
+          target.getBoundingClientRect().top + window.pageYOffset;
+        const scrollTo = targetPosition - offset;
+
+        window.history.replaceState(null, '', '/?scroll=' + targetId);
+
+        window.scrollTo({
+          top: scrollTo,
+          behavior: 'smooth'
+        });
+      }
+    } else {
+      // ▼▼ 他ページ → TOP に遷移して自動スクロール ▼▼
+      location.href = href;
+    }
+  });
+});
+
+
+// ▼▼ TOP ロード後、自動スクロール（他ページから来たとき用） ▼▼
 window.addEventListener('load', () => {
   const params = new URLSearchParams(window.location.search);
-  const targetId = params.get('scroll'); // "about" など
+  const targetId = params.get('scroll');
 
   if (targetId) {
     const target = document.getElementById(targetId);
