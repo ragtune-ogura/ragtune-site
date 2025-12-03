@@ -426,7 +426,9 @@ h3 {
     display: block;
     width: var(--tag-size);
     height: var(--tag-size);
-    background-color: red;
+    background-image: url(./images/tag-image.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .client_name {
@@ -485,10 +487,12 @@ h3 {
 }
 
 .client-swiper-controls {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
+    --control-gap: clamp(1.5rem, 4.59vw + 0.381rem, 3.25rem);
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-top: var(--control-gap);
+    align-items: center;
 }
 
 .swiper-button-next,
@@ -497,6 +501,12 @@ h3 {
   width: 28px;
   height: 28px;
   color: #333;
+}
+
+@media screen and (max-width: 767px) {
+  .client-swiper .swiper-wrapper {
+    padding-block-end: 20px;
+  }
 }
 
 /* =========================================
