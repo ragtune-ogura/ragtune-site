@@ -463,6 +463,7 @@ h3 {
     background-color: var(--primary-main);
     color: #fff;
     position: relative;
+    cursor: pointer;
 }
 
 .client-meta>button:hover {
@@ -476,8 +477,11 @@ h3 {
     display: block;
     width: var(--icon-size);
     height: var(--icon-size);
-    background-color: red;
     margin-inline-end: var(--icon-gap);
+    background-image: url(./images/web-link.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 2px;
 }
 
 .client-swiper-controls {
