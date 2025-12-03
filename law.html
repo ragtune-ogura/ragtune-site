@@ -3,47 +3,72 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>特定商取引法に基づく表記｜Ragtune Shopify Studio</title>
+  <title>特定商取引法に基づく表記｜Ragtune</title>
 
+  <!-- 共通CSS -->
   <link rel="stylesheet" href="./style.css" />
+
+  <!-- Favicon -->
   <link rel="icon" href="./images/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="./images/apple-icon-180.png" sizes="180x180">
 </head>
 <body>
 
+  <!-- 共通ヘッダー -->
   <div id="header-include"></div>
 
   <main class="page-wrapper" style="max-width: 900px; margin: 120px auto; padding-inline: 20px;">
     <h1>特定商取引法に基づく表記</h1>
 
-    <h2>事業者名</h2>
-    <p>Ragtune Shopify Studio（小倉氏の名前でも可）</p>
+    <dl class="law-table">
+      <dt>事業者名</dt>
+      <dd>小倉 功嗣（屋号：Ragtune）</dd>
 
-    <h2>所在地</h2>
-    <p>お問い合わせいただいた際に遅滞なく開示いたします。</p>
+      <dt>所在地</dt>
+      <dd>〒101-0024 東京都千代田区神田和泉町1番地6-16 ヤマトビル405</dd>
 
-    <h2>連絡先</h2>
-    <p>Email：◯◯◯（あなたの事業用メール）</p>
+      <dt>電話番号</dt>
+      <dd>070-4365-3849</dd>
 
-    <h2>販売価格</h2>
-    <p>提供するサービス内容ごとに見積もりを提示いたします。</p>
+      <dt>メールアドレス</dt>
+      <dd><a href="mailto:info.ragtune@gmail.com">info.ragtune@gmail.com</a></dd>
 
-    <h2>商品代金以外の必要料金</h2>
-    <p>銀行振込手数料、通信費などはお客様負担となります。</p>
+      <dt>役務の内容</dt>
+      <dd>Shopify 構築、UI/UX 設計、デザイン定義書作成、維持管理・相談サポート</dd>
 
-    <h2>支払時期・方法</h2>
-    <p>銀行振込／クレジット決済（Stripe等）。お見積もり時に案内いたします。</p>
+      <dt>販売価格・料金体系</dt>
+      <dd>サービス内容に応じて見積もりを提示いたします。</dd>
 
-    <h2>サービス提供時期</h2>
-    <p>契約締結後、別途定めたスケジュールに基づき提供します。</p>
+      <dt>商品代金以外の必要料金</dt>
+      <dd>銀行振込手数料、通信費等はお客様のご負担となります。</dd>
 
-    <h2>返品・キャンセル</h2>
-    <p>デジタルサービスの特性上、作業着手後のキャンセルは原則不可となります。</p>
+      <dt>支払方法</dt>
+      <dd>銀行振込</dd>
 
+      <dt>支払時期</dt>
+      <dd>契約時に案内した支払スケジュールに基づきます。</dd>
+
+      <dt>サービス提供時期</dt>
+      <dd>契約締結後、合意したスケジュールに基づき提供します。</dd>
+
+      <dt>キャンセル・返品ポリシー</dt>
+      <dd>
+        デジタルサービスの特性上、作業着手後のキャンセルは不可となります。<br>
+        着手前のキャンセルについては個別にご相談ください。
+      </dd>
+
+      <dt>免責事項</dt>
+      <dd>
+        役務の性質上、成果物の効果を保証するものではありません。<br>
+        また、当サイトの利用により生じたトラブル・損失・損害について、一切の責任を負いかねます。
+      </dd>
+    </dl>
   </main>
 
+  <!-- 共通フッター -->
   <div id="footer-include"></div>
 
+  <!-- ヘッダー／フッター読み込み -->
   <script>
     const includes = [
       { id: "header-include", file: "./partials/header.html" },
@@ -52,9 +77,11 @@
 
     Promise.all(
       includes.map(part =>
-        fetch(part.file).then(res => res.text()).then(html => {
-          document.getElementById(part.id).innerHTML = html;
-        })
+        fetch(part.file)
+          .then(res => res.text())
+          .then(html => {
+            document.getElementById(part.id).innerHTML = html;
+          })
       )
     );
   </script>
