@@ -567,3 +567,23 @@ section {
     padding-block-start: min(8rem,9vw);
   }
 }
+
+/* =========================================
+  10. section 3
+========================================= */
+#section3 {
+    padding-block-start: var(--s80-160);
+    padding-block-end: var(--s60-120);
+    padding-inline: 2rem;
+}
+#section3, .client-swiper {
+    background-color: #fff;
+}
+.client-swiper {
+    padding-block-end: var(--s48-120);
+}
+@media screen and (min-width: 1000px) {
+  #section3 {
+    padding-inline: 120px;
+  }
+}
