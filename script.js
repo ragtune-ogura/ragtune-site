@@ -68,12 +68,17 @@ document.addEventListener("click", (e) => {
 //   });
 // });
 
-document.querySelectorAll('.menu-dropdown li > a').forEach(link => {
+document.querySelectorAll('.anchor-link').forEach(link => {
   link.addEventListener('click', function(e) {
-    const href = this.getAttribute('href');
+    const href = this.getAttribute('href'); // "#about" など
 
-    // 内部アンカーのみスムーススクロール
-    if (href.startsWith('#')) {
+    // 今のページがトップかどうか判定
+    const isTopPage =
+      location.pathname === '/' ||
+      location.pathname === '/index.html';
+
+    if (isTopPage) {
+      // ---- TOP ページではスムーススクロール ----
       e.preventDefault();
 
       const targetId = href.replace('#', '');
@@ -89,6 +94,10 @@ document.querySelectorAll('.menu-dropdown li > a').forEach(link => {
         top: scrollTo,
         behavior: 'smooth'
       });
+    } else {
+      // ---- 他ページではTOPへ遷移しつつアンカー飛びを発火 ----
+      // me.ragtune.com/#about に飛べばブラウザが自動ジャンプする
+      location.href = '/#' + href.replace('#', '');
     }
   });
 });
