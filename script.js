@@ -69,11 +69,19 @@ document.addEventListener("click", (e) => {
 // });
 
 document.querySelectorAll('.menu-dropdown li > a').forEach(link => {
-  link.addEventListener('click', function(e) {
+  link.addEventListener('click', function (e) {
     const href = this.getAttribute('href');
 
-    // TOP にいる場合だけ内部リンクに変換してスムーススクロール
-    if (location.pathname === '/ragtune-site/' && href.startsWith('/ragtune-site/#')) {
+    // --- 現在がTOPページかどうかを判定 ---
+    const isTopPage =
+      location.pathname === '/ragtune-site/' ||
+      location.pathname === '/ragtune-site' ||
+      location.pathname.endsWith('/ragtune-site/index.html');
+
+    // --- クリックしたリンクがTOPページ内のアンカーかどうか ---
+    const isInternalAnchor = href.startsWith('/ragtune-site/#');
+
+    if (isTopPage && isInternalAnchor) {
       e.preventDefault();
 
       const targetId = href.split('#')[1];
@@ -84,23 +92,13 @@ document.querySelectorAll('.menu-dropdown li > a').forEach(link => {
       const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
       const scrollTo = targetPosition - offset;
 
-      window.scrollTo({ top: scrollTo, behavior: 'smooth' });
+      window.scrollTo({
+        top: scrollTo,
+        behavior: 'smooth'
+      });
       return;
     }
 
-    // 既存の「hrefが#から始まる内部リンクならスムーススクロール」処理
-    if (href.startsWith('#')) {
-      e.preventDefault();
-
-      const targetId = href.replace('#', '');
-      const target = document.getElementById(targetId);
-      if (!target) return;
-
-      const offset = window.innerWidth <= 999 ? 92 : 113;
-      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-      const scrollTo = targetPosition - offset;
-
-      window.scrollTo({ top: scrollTo, behavior: 'smooth' });
-    }
+    // TOP以外のページでは普通にページ遷移する（/#about に移動）
   });
 });
