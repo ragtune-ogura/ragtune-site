@@ -201,6 +201,90 @@
       { id: "footer-include", file: "./partials/footer.html" },
     ];
 
+    // パーシャル読み込み
+    Promise.all(
+      includes.map((part) =>
+        fetch(part.file)
+          .then((res) => res.text())
+          .then((html) => {
+            document.getElementById(part.id).innerHTML = html;
+          })
+      )
+    ).then(() => {
+      // script.js 読み込み（Swiper本体や他処理用）
+      const mainScript = document.createElement("script");
+      mainScript.src = "./script.js";
+      mainScript.onload = () => {
+        // script.js 読み込み完了後にイベント
+        document.dispatchEvent(new Event("partialsLoaded"));
+      };
+      document.body.appendChild(mainScript);
+    });
+
+    function initClientSwiper() {
+      const container = document.querySelector(".client-swiper");
+      if (!container) return;
+
+      const currentEl = document.querySelector(".swiper-counter .current");
+      const totalEl = document.querySelector(".swiper-counter .total");
+
+      const swiper = new Swiper(".client-swiper", {
+        loop: true,
+        slidesPerView: "auto",
+        centeredSlides: true,
+        // loopAdditionalSlides: は一旦なしで様子見
+        spaceBetween: 16,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          768: {
+            spaceBetween: 32,
+            centeredSlides: true,  // PC でもチラ見せしたいなら true のまま
+          },
+          1280: {
+            spaceBetween: 100,
+            centeredSlides: true,
+          },
+        },
+        on: {
+          init(sw) {
+            if (totalEl) {
+              // 本物のスライド枚数（複製分を引く）
+              totalEl.textContent = sw.slides.length - sw.loopedSlides * 2;
+            }
+            updateCounter(sw);
+          },
+          slideChange(sw) {
+            updateCounter(sw);
+          },
+        },
+      });
+
+      function updateCounter(sw) {
+        if (!currentEl) return;
+        currentEl.textContent = sw.realIndex + 1;
+      }
+    }
+
+    document.addEventListener("partialsLoaded", () => {
+      if (window.initSections) window.initSections();
+      initClientSwiper(); // ここでだけ Swiper を初期化
+      document.body.classList.add("page-loaded");
+    });
+  </script>
+
+  <!-- <script>
+    const includes = [
+      { id: "header-include", file: "./partials/header.html" },
+      { id: "section1-include", file: "./partials/section1.html" },
+      { id: "section2-include", file: "./partials/section2.html" },
+      { id: "section3-include", file: "./partials/section3.html" },
+      { id: "section4-include", file: "./partials/section4.html" },
+      { id: "footer-include", file: "./partials/footer.html" },
+    ];
+
     Promise.all(
       includes.map((part) =>
         fetch(part.file)
@@ -264,6 +348,6 @@
 
       document.body.classList.add("page-loaded");
     });
-  </script>
+  </script> -->
 </body>
 </html>
