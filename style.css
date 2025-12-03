@@ -803,4 +803,9 @@ section {
   #section4 {
     padding-inline: 120px;
   }
+  .tailored-section-contents {
+    grid-template-columns: repeat(3,minmax(0,340px));
+    justify-content: space-between;
+    gap: 3rem;
+  }
 }
