@@ -132,7 +132,7 @@ p {
 h1, h2, h3 {
     font-family: var(--font-mulish);
     font-weight: 1000;
-    margin-block: (--m-block, 0);
+    margin-block: var(--m-block, 0);
 }
 h1 {
     font-size: var(--s24-48);
@@ -497,4 +497,27 @@ section {
     margin-block-start: -20vw;
     padding-block-end: 9vw;
   }
+}
+
+/* =========================================
+  9. section 2
+========================================= */
+.s2-title-group h2+p {
+    margin-block-start: 2rem;
+}
+.s2-title-group p {
+    font-weight: 400 !important;
+}
+.s2-title-group p+p {
+    margin-block-start: 2em;
+}
+
+@media screen and (max-width: 999px) {
+  .s2-title-group {
+    padding-inline: 2rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  
 }
