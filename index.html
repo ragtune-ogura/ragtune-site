@@ -231,6 +231,8 @@
       const swiper = new Swiper(".client-swiper", {
       loop: true,
       centeredSlides: true,
+      initialSlide: 1,
+      loopAdditionalSlides: 5,
       slidesPerView: "auto", // または 1・3など用途に応じて
       navigation: {
         nextEl: ".swiper-button-next",
@@ -253,11 +255,18 @@
           const total = document.querySelector(".swiper-counter .total");
           total.textContent = this.slides.length - this.loopedSlides * 2; 
           updateCounter(this);
+
+          // ← これが重要：描画が完了したタイミングで実行
+          setTimeout(() => {
+            this.slideToLoop(0, 0);
+          }, 0);
         },
+
         slideChange: function () {
           updateCounter(this);
         },
       },
+
     });
 
     function updateCounter(swiper) {
