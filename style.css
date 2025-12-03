@@ -511,6 +511,24 @@ h3 {
     padding-block-end: 20px;
   }
 }
+@media screen and (min-width: 768px) {
+  .client-swiper .swiper-slide {
+    width: max(48.6vw, 700px);
+    overflow: visible;
+    flex-direction: row;
+    position: relative;
+    }
+  .client-meta {
+    flex: unset;
+    width: 380px;
+    position: absolute;
+    right: -14vw;
+    right: -80px;
+    z-index: 3;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
 
 /* =========================================
   7. Media Queries
