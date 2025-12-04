@@ -353,7 +353,6 @@ h3 {
     flex-direction: column;
     overflow: hidden;
     box-shadow: var(--shadow-main);
-    transform: translateX(min(-150px, -10.4vw));
 }
 
 @media screen and (min-width: 768px) {
