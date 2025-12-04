@@ -24,6 +24,109 @@
     <h1>Contact</h1>
 
     <form
+      action="https://formspree.io/f/xzznvpaz"
+      method="POST"
+      class="contact-form"
+    >
+      <!-- お名前（必須） -->
+      <label>
+        お名前（必須）
+        <input
+          type="text"
+          name="name"
+          required
+          placeholder="山田 太郎"
+        >
+      </label>
+
+      <!-- メールアドレス（必須） -->
+      <label>
+        メールアドレス（必須）
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="email@example.com"
+        >
+      </label>
+
+      <!-- 相談カテゴリ（必須） -->
+      <label>
+        ご相談内容の種類（必須）
+        <select name="category" required>
+          <option value="" disabled selected>選択してください</option>
+          <option value="shopify-new">Shopify 新規構築</option>
+          <option value="shopify-renewal">Shopify リニューアル</option>
+          <option value="shopify-customize">Shopify カスタマイズ</option>
+          <option value="uiux">UI/UX デザイン</option>
+          <option value="guideline">デザインガイドライン設計</option>
+          <option value="other">その他</option>
+        </select>
+      </label>
+
+      <!-- ご相談本文（必須） -->
+      <label>
+        ご相談内容（必須）
+        <textarea
+          name="message"
+          required
+          placeholder="既存サイトの導線改善のご相談です。Shopifyのテーマ調整やUIの見直しをお願いしたいと考えています。"
+          rows="5"
+        ></textarea>
+      </label>
+
+      <!-- サイトURL（任意） -->
+      <label>
+        サイトURL（任意）
+        <input
+          type="url"
+          name="site_url"
+          placeholder="https://your-site.com"
+        >
+      </label>
+
+      <!-- 予算感（任意） -->
+      <label>
+        ご予算イメージ（任意）
+        <select name="budget">
+          <option value="" selected>未選択</option>
+          <option value="undecided">未定</option>
+          <option value="30">〜30万円</option>
+          <option value="60">30〜60万円</option>
+          <option value="100">60〜100万円</option>
+          <option value="100plus">100万円以上</option>
+        </select>
+      </label>
+
+      <!-- 納期イメージ（任意） -->
+      <label>
+        希望納期（任意）
+        <select name="timeline">
+          <option value="" selected>未選択</option>
+          <option value="asap">できるだけ早く</option>
+          <option value="1-2">1〜2ヶ月以内</option>
+          <option value="3plus">3ヶ月以内</option>
+          <option value="undecided">未定</option>
+        </select>
+      </label>
+
+      <!-- 初回相談形式（任意） -->
+      <label>
+        初回相談のご希望（任意）
+        <select name="contact_style">
+          <option value="" selected>未選択</option>
+          <option value="zoom">オンラインMTG（Zoom/Google Meet）希望</option>
+          <option value="email">メールで進めたい</option>
+          <option value="either">どちらでも</option>
+        </select>
+      </label>
+
+      <!-- 最終送信ボタン -->
+      <button type="submit">送信する</button>
+    </form>
+
+
+    <!-- <form
     action="https://formspree.io/f/xzznvpaz"
     method="POST"
   >
@@ -35,9 +138,8 @@
       Your message:
       <textarea name="message"></textarea>
     </label>
-    <!-- your other form fields go here -->
     <button type="submit">Send</button>
-  </form>
+  </form> -->
 
   </main>
 
