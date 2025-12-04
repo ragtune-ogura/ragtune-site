@@ -73,6 +73,7 @@
       { id: "footer-include", file: "../partials/footer-en.html" },
     ];
 
+    
     Promise.all(
       includes.map(part =>
         fetch(part.file)
