@@ -916,8 +916,8 @@ footer>img {
 .law-table dd {
     margin-inline: 0;
     margin-block-start: var(--s4-10);
-    padding-block-end: 4px;
-    border-bottom: 1px solid var(--text-main);
+    padding-block-end: var(--s18-24);
+    border-bottom: .5px solid var(--text-main);
 }
 .law-table dd+dt {
     margin-block-start: var(--s18-24);
