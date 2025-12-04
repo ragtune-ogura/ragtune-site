@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Ragtune Shopify Studio</title>
+
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Allura&family=Mulish:wght@200;400;700;900&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="https://use.typekit.net/duu5afd.css" />
+
+  <link rel="icon" href="../images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../images/apple-icon-180.png" sizes="180x180">
+</head>
+
+<body>
+
+  <div id="header-include"></div>
+
+  <main class="page-wrapper">
+    <h1>Contact</h1>
+
+    <form
+      action="https://formspree.io/f/xzznvpaz"
+      method="POST"
+      class="contact-form"
+    >
+      <!-- 名前 (必須) ※name属性は日本語のまま -->
+      <label>
+        Name (Required)
+        <input
+          type="text"
+          name="お名前"
+          required
+          placeholder="Your Name"
+        >
+      </label>
+
+      <!-- メールアドレス -->
+      <label>
+        Email (Required)
+        <input
+          type="email"
+          name="メールアドレス"
+          required
+          placeholder="email@example.com"
+        >
+      </label>
+
+      <!-- カテゴリ -->
+      <label>
+        Inquiry Type (Required)
+        <select name="ご相談内容の種類" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="shopify-新規構築">Shopify – New Store Development</option>
+          <option value="shopify-リニューアル">Shopify – Redesign / Renewal</option>
+          <option value="shopify-カスタマイズ">Shopify – Customization</option>
+          <option value="uiuxデザイン">UI/UX Design</option>
+          <option value="guideline設計">Design Guideline Creation</option>
+          <option value="その他">Other</option>
+        </select>
+      </label>
+
+      <!-- 本文 -->
+      <label>
+        Message (Required)
+        <textarea
+          name="ご相談内容"
+          required
+          placeholder="Please describe your project details or challenges you're facing."
+          rows="5"
+        ></textarea>
+      </label>
+
+      <!-- サイトURL -->
+      <label>
+        Website URL (Optional)
+        <input
+          type="url"
+          name="サイトURL"
+          placeholder="https://your-site.com"
+        >
+      </label>
+
+      <!-- 予算 -->
+      <label>
+        Estimated Budget (Optional)
+        <select name="ご予算">
+          <option value="" selected>Not selected</option>
+          <option value="undecided">Undecided</option>
+          <option value="30万円以下">Under ¥300,000</option>
+          <option value="30-60万円">¥300,000 – ¥600,000</option>
+          <option value="60-100万円">¥600,000 – ¥1,000,000</option>
+          <option value="100万円以上">Over ¥1,000,000</option>
+        </select>
+      </label>
+
+      <!-- 納期 -->
+      <label>
+        Desired Timeline (Optional)
+        <select name="希望納期">
+          <option value="" selected>Not selected</option>
+          <option value="asap">As soon as possible</option>
+          <option value="1-2ヶ月以内">Within 1–2 months</option>
+          <option value="3ヶ月以内">Within 3 months</option>
+          <option value="未定">Undecided</option>
+        </select>
+      </label>
+
+      <!-- 初回相談形式 -->
+      <label>
+        Preferred Contact Method (Optional)
+        <select name="初回相談のご希望">
+          <option value="" selected>Not selected</option>
+          <option value="オンラインMTG">Online Meeting (Zoom/Google Meet)</option>
+          <option value="メール希望">Email</option>
+          <option value="どちらでも">Either is fine</option>
+        </select>
+      </label>
+
+      <!-- 送信ボタン -->
+      <button 
+        type="submit" 
+        class="contact-btn"
+        style="
+          border: none;
+          font-weight: 700;
+          width: 100%;
+          max-width: 500px;
+          justify-content: center;
+          margin-inline: auto;
+          margin-block-start: 2rem;
+          cursor: pointer;
+        "
+      >Send</button>
+    </form>
+  </main>
+
+  <div id="footer-include"></div>
+
+  <script>
+    const includes = [
+      { id: "header-include", file: "../partials/header-en.html" },
+      { id: "footer-include", file: "../partials/footer-en.html" },
+    ];
+
+    Promise.all(
+      includes.map(part =>
+        fetch(part.file)
+          .then(res => res.text())
+          .then(html => {
+            document.getElementById(part.id).innerHTML = html;
+          })
+      )
+    ).then(() => {
+      const mainScript = document.createElement("script");
+      mainScript.src = "../script.js";
+      mainScript.onload = () => {
+        document.dispatchEvent(new Event("partialsLoaded"));
+      };
+      document.body.appendChild(mainScript);
+
+      document.body.classList.add("page-loaded");
+    });
+  </script>
+
+</body>
+</html>
