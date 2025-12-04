@@ -4,13 +4,13 @@
 document.addEventListener("click", (e) => {
   const menu = document.querySelector(".menu-selector");
 
-  // メニュークリックで open 切り替え
+  // --- Menu 開閉 ---
   if (e.target.closest(".menu-btn")) {
     menu.classList.toggle("open");
-    return;
+    return; // ← ここ超重要！（即閉じを防ぐ）
   }
 
-  // 内側（dropdown内）のクリックは閉じない
+  // dropdown 内クリックは閉じない
   if (e.target.closest(".menu-selector")) {
     return;
   }
