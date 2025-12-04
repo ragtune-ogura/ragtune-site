@@ -2,19 +2,19 @@
 // Dropdown
 // =====================
 document.addEventListener("click", (e) => {
-  // Language dropdown
-  if (e.target.closest(".lang-btn")) {
-    const dd = document.querySelector(".lang-dropdown");
-    dd.style.display = dd.style.display === "block" ? "none" : "block";
-  } else {
-    document.querySelector(".lang-dropdown").style.display = "none";
+  const menu = document.querySelector(".menu-selector");
+
+  // メニュークリックで open 切り替え
+  if (e.target.closest(".menu-btn")) {
+    menu.classList.toggle("open");
+    return;
   }
 
-  // Menu dropdown
-  if (e.target.closest(".menu-btn")) {
-    const dd = document.querySelector(".menu-dropdown");
-    dd.style.display = dd.style.display === "block" ? "none" : "block";
-  } else {
-    document.querySelector(".menu-dropdown").style.display = "none";
+  // 内側（dropdown内）のクリックは閉じない
+  if (e.target.closest(".menu-selector")) {
+    return;
   }
+
+  // 外側クリックで閉じる
+  menu.classList.remove("open");
 });

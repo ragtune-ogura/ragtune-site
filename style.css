@@ -301,13 +301,14 @@ h3 {
     opacity: var(--opacity);
 }
 
-.menu-selector:hover .menu-dropdown {
+.menu-dropdown {
+  display: none;
+}
+
+.menu-selector.open .menu-dropdown {
   display: block;
 }
 
-.lang-selector:hover .lang-dropdown {
-  display: block;
-}
 .lang-dropdown a, .menu-dropdown a {
     text-decoration: none;
     color: var(--text-main);
