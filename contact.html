@@ -145,13 +145,13 @@
 
   <div id="footer-include"></div>
 
-  <!-- common include loader -->
   <script>
     const includes = [
       { id: "header-include", file: "./partials/header.html" },
       { id: "footer-include", file: "./partials/footer.html" },
     ];
 
+    // パーシャル読み込み
     Promise.all(
       includes.map(part =>
         fetch(part.file)
@@ -161,10 +161,18 @@
           })
       )
     ).then(() => {
+      // script.js を動的に読み込み
+      const mainScript = document.createElement("script");
+      mainScript.src = "./script.js";
+      mainScript.onload = () => {
+        // script.js 側で使えるイベント
+        document.dispatchEvent(new Event("partialsLoaded"));
+      };
+      document.body.appendChild(mainScript);
+
       document.body.classList.add("page-loaded");
     });
   </script>
-
 
 </body>
 </html>
