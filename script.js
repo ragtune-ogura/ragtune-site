@@ -1,20 +1,25 @@
-// =====================
-// Dropdown
-// =====================
 document.addEventListener("click", (e) => {
-  const menu = document.querySelector(".lang-selector, .menu-selector");
+  const lang = document.querySelector(".lang-selector");
+  const menu = document.querySelector(".menu-selector");
 
-  // --- Menu 開閉 ---
-  if (e.target.closest(".lang-btn, .menu-btn")) {
-    menu.classList.toggle("open");
-    return; // ← ここ超重要！（即閉じを防ぐ）
-  }
-
-  // dropdown 内クリックは閉じない
-  if (e.target.closest(".lang-selector, .menu-selector")) {
+  // --- 言語ドロップダウン ---
+  if (e.target.closest(".lang-btn")) {
+    lang.classList.toggle("open");
     return;
   }
 
-  // 外側クリックで閉じる
+  // --- メニュードロップダウン ---
+  if (e.target.closest(".menu-btn")) {
+    menu.classList.toggle("open");
+    return;
+  }
+
+  // --- 内側クリックは閉じない ---
+  if (e.target.closest(".lang-selector") || e.target.closest(".menu-selector")) {
+    return;
+  }
+
+  // --- 外側クリックで両方閉じる ---
+  lang.classList.remove("open");
   menu.classList.remove("open");
 });
