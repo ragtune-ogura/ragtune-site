@@ -1,18 +1,68 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>お問い合わせ</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>お問い合わせ｜Ragtune Shopify Studio</title>
+
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Allura&family=Mulish:wght@200;400;700;900&family=Noto+Sans+JP:wght@300;400;700;900&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="https://use.typekit.net/duu5afd.css" />
+  <link rel="icon" href="./images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="./images/apple-icon-180.png" sizes="180x180">
 </head>
 <body>
-  <h2>お問い合わせ</h2>
-  <form action="https://formspree.io/f/your-form-id" method="POST">
-    <input type="text" name="name" placeholder="お名前" required>
-    <input type="email" name="email" placeholder="メールアドレス" required>
-    <textarea name="message" placeholder="お問い合わせ内容" required></textarea>
-    <button type="submit">送信</button>
+
+  <div id="header-include"></div>
+
+  <main class="page-wrapper">
+    <h1>Contact</h1>
+
+    <form
+    action="https://formspree.io/f/xzznvpaz"
+    method="POST"
+  >
+    <label>
+      Your email:
+      <input type="email" name="email">
+    </label>
+    <label>
+      Your message:
+      <textarea name="message"></textarea>
+    </label>
+    <!-- your other form fields go here -->
+    <button type="submit">Send</button>
   </form>
+
+  </main>
+
+  <div id="footer-include"></div>
+
+  <!-- common include loader -->
+  <script>
+    const includes = [
+      { id: "header-include", file: "./partials/header.html" },
+      { id: "footer-include", file: "./partials/footer.html" },
+    ];
+
+    Promise.all(
+      includes.map(part =>
+        fetch(part.file)
+          .then(res => res.text())
+          .then(html => {
+            document.getElementById(part.id).innerHTML = html;
+          })
+      )
+    ).then(() => {
+      document.body.classList.add("page-loaded");
+    });
+  </script>
+
+
 </body>
 </html>
