@@ -252,7 +252,7 @@ h3 {
 .lang-selector, .menu-selector {
     position: relative;
     display: flex;
-    font-size: var(--s13-20);
+    font-size: var(--s16-20);
     align-items: center;
     gap: var(--s4-10);
 }
@@ -291,7 +291,7 @@ h3 {
 }
 .lang-dropdown li+li,
 .menu-dropdown li+li {
-    margin-top: var(--s10-12);
+    margin-top: var(--s12-16);
 }
 
 .hover-open>span {
@@ -324,7 +324,7 @@ h3 {
   5. Contact Button
 ========================================= */
 .contact-btn {
-    font-size: var(--s13-20);
+    font-size: var(--s16-20);
     background: var(--primary-main);
     padding: 8px 20px;
     color: #fff;
