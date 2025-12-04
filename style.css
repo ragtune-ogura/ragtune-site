@@ -929,3 +929,28 @@ p.bold {
     font-size: var(
     --s16-20);
 }
+
+/* =========================================
+  14. contact form
+========================================= */
+.page-wrapper>form {
+    max-width: 100%;
+}
+.page-wrapper form label {
+    font-weight: 700;
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+    max-width: 100%;
+}
+.page-wrapper form label>* {
+    margin-block: .5rem 0;
+    padding: 1rem;
+    border-radius: 8px;
+    width: auto;
+    max-width: 100%;
+    border: 2px solid var(--border);
+}
+.page-wrapper form label>select {
+    cursor: pointer;
+}
