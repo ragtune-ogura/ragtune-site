@@ -33,7 +33,7 @@
         お名前（必須）
         <input
           type="text"
-          name="name"
+          name="お名前"
           required
           placeholder="山田 太郎"
         >
@@ -44,7 +44,7 @@
         メールアドレス（必須）
         <input
           type="email"
-          name="email"
+          name="メールアドレス"
           required
           placeholder="email@example.com"
         >
@@ -53,14 +53,14 @@
       <!-- 相談カテゴリ（必須） -->
       <label>
         ご相談内容の種類（必須）
-        <select name="category" required>
+        <select name="ご相談内容の種類" required>
           <option value="" disabled selected>選択してください</option>
-          <option value="shopify-new">Shopify 新規構築</option>
-          <option value="shopify-renewal">Shopify リニューアル</option>
-          <option value="shopify-customize">Shopify カスタマイズ</option>
-          <option value="uiux">UI/UX デザイン</option>
-          <option value="guideline">デザインガイドライン設計</option>
-          <option value="other">その他</option>
+          <option value="shopify-新規構築">Shopify 新規構築</option>
+          <option value="shopify-リニューアル">Shopify リニューアル</option>
+          <option value="shopify-カスタマイズ">Shopify カスタマイズ</option>
+          <option value="uiuxデザイン">UI/UX デザイン</option>
+          <option value="guideline設計">デザインガイドライン設計</option>
+          <option value="その他">その他</option>
         </select>
       </label>
 
@@ -68,7 +68,7 @@
       <label>
         ご相談内容（必須）
         <textarea
-          name="message"
+          name="ご相談内容"
           required
           placeholder="既存サイトの導線改善のご相談です。Shopifyのテーマ調整やUIの見直しをお願いしたいと考えています。"
           rows="5"
@@ -80,7 +80,7 @@
         サイトURL（任意）
         <input
           type="url"
-          name="site_url"
+          name="サイトURL"
           placeholder="https://your-site.com"
         >
       </label>
@@ -88,36 +88,36 @@
       <!-- 予算感（任意） -->
       <label>
         ご予算イメージ（任意）
-        <select name="budget">
+        <select name="ご予算">
           <option value="" selected>未選択</option>
           <option value="undecided">未定</option>
-          <option value="30">〜30万円</option>
-          <option value="60">30〜60万円</option>
-          <option value="100">60〜100万円</option>
-          <option value="100plus">100万円以上</option>
+          <option value="30万円以下">〜30万円</option>
+          <option value="30-60万円">30〜60万円</option>
+          <option value="60-100万円">60〜100万円</option>
+          <option value="100万円以上">100万円以上</option>
         </select>
       </label>
 
       <!-- 納期イメージ（任意） -->
       <label>
         希望納期（任意）
-        <select name="timeline">
+        <select name="希望納期">
           <option value="" selected>未選択</option>
           <option value="asap">できるだけ早く</option>
-          <option value="1-2">1〜2ヶ月以内</option>
-          <option value="3plus">3ヶ月以内</option>
-          <option value="undecided">未定</option>
+          <option value="1-2ヶ月以内">1〜2ヶ月以内</option>
+          <option value="3ヶ月以内">3ヶ月以内</option>
+          <option value="未定">未定</option>
         </select>
       </label>
 
       <!-- 初回相談形式（任意） -->
       <label>
         初回相談のご希望（任意）
-        <select name="contact_style">
+        <select name="初回相談のご希望">
           <option value="" selected>未選択</option>
-          <option value="zoom">オンラインMTG（Zoom/Google Meet）希望</option>
-          <option value="email">メールで進めたい</option>
-          <option value="either">どちらでも</option>
+          <option value="オンラインMTG">オンラインMTG（Zoom/Google Meet）希望</option>
+          <option value="メール希望">メールで進めたい</option>
+          <option value="どちらでも">どちらでも</option>
         </select>
       </label>
 
