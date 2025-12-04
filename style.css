@@ -954,3 +954,6 @@ p.bold {
 .page-wrapper form label>select {
     cursor: pointer;
 }
+.page-wrapper form label+label {
+    margin-block-start: var(--s18-24);
+}
