@@ -301,10 +301,11 @@ h3 {
     opacity: var(--opacity);
 }
 
-.menu-dropdown {
+.lang-dropdown, .menu-dropdown {
   display: none;
 }
 
+.lang-selector.open .lang-dropdown,
 .menu-selector.open .menu-dropdown {
   display: block;
 }
