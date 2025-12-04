@@ -921,7 +921,7 @@ footer>img {
     border-bottom: 1px solid var(--text-main);
 }
 .law-table dd+dt {
-    margin-block-start: var(--s16-20);
+    margin-block-start: var(--s18-24);
 }
 p.bold {
     font-weight: 700;
