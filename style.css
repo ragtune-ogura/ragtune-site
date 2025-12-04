@@ -17,7 +17,6 @@
   --gray-light: #e6e6e6;
 
   --font-jp: "Noto Sans JP", sans-serif;
-  --font-allura: "Allura", cursive;
   --font-mulish: "Mulish", sans-serif;
 
   --s4-10: clamp(0.25rem, 0.984vw + 0.01rem, 0.625rem);
