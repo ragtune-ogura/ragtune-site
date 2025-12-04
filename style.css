@@ -356,6 +356,11 @@ h3 {
     transform: translateX(min(-150px, -10.4vw));
 }
 
+@media screen and (min-width: 768px) {
+  .client-swiper .swiper-slide {
+    transform: translateX(min(-150px, -10.4vw));
+  }
+}
 @media screen and (min-width: 1600px) {
   .client-swiper .swiper-slide {
     transform: translateX(-150px);
