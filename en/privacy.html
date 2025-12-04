@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | Ragtune Shopify Studio</title>
+
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Allura&family=Mulish:wght@200;400;700;900&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="https://use.typekit.net/duu5afd.css" />
+
+  <link rel="icon" href="../images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../images/apple-icon-180.png" sizes="180x180">
+</head>
+
+<body>
+
+  <div id="header-include"></div>
+
+  <main class="page-wrapper">
+    <h1>Privacy Policy</h1>
+
+    <p>
+      Ragtune Shopify Studio (“this site”) is committed to protecting the personal information
+      of our users. We handle all information in accordance with the following policy.
+    </p>
+
+    <p class="bold">1. Information We Collect</p>
+    <p>
+      When you submit an inquiry through our contact form, we may collect your name,
+      email address, and any optional information you choose to provide.
+    </p>
+
+    <p class="bold">2. Purpose of Use</p>
+    <p>
+      The collected information is used solely for responding to inquiries, providing service
+      information, and performing related business operations.
+    </p>
+
+    <p class="bold">3. Management of Personal Information</p>
+    <p>
+      We manage personal information appropriately and do not disclose it to third parties,
+      except when required by law.
+    </p>
+
+    <p class="bold">4. Use of Cookies</p>
+    <p>
+      This site may use cookies for access analytics and to improve the user experience.
+    </p>
+
+    <p class="bold">5. Disclaimer</p>
+    <p>
+      We are not responsible for the management of personal information on external websites
+      linked from this site.
+    </p>
+
+    <p class="bold">6. Contact</p>
+    <p>
+      For questions regarding this Privacy Policy, please contact the site administrator.
+    </p>
+  </main>
+
+  <div id="footer-include"></div>
+
+  <script>
+    const includes = [
+      { id: "header-include", file: "../partials/header-en.html" },
+      { id: "footer-include", file: "../partials/footer-en.html" },
+    ];
+
+    Promise.all(
+      includes.map(part =>
+        fetch(part.file)
+          .then(res => res.text())
+          .then(html => {
+            document.getElementById(part.id).innerHTML = html;
+          })
+      )
+    ).then(() => {
+      const mainScript = document.createElement("script");
+      mainScript.src = "../script.js";
+      mainScript.onload = () => {
+        document.dispatchEvent(new Event("partialsLoaded"));
+      };
+      document.body.appendChild(mainScript);
+
+      document.body.classList.add("page-loaded");
+    });
+  </script>
+
+</body>
+</html>

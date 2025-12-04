@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Legal Notice | Ragtune</title>
+
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Allura&family=Mulish:wght@200;400;700;900&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="https://use.typekit.net/duu5afd.css" />
+
+  <link rel="icon" href="../images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../images/apple-icon-180.png" sizes="180x180">
+</head>
+
+<body>
+
+  <div id="header-include"></div>
+
+  <main class="page-wrapper">
+    <h1>Legal Notice</h1>
+
+    <dl class="law-table">
+      <dt>Business Name</dt>
+      <dd>Koji Ogura (Business name: Ragtune)</dd>
+
+      <dt>Business Address</dt>
+      <dd>Yamato Building 405, 1-6-16 Kanda Izumicho, Chiyoda-ku, Tokyo 101-0024, Japan</dd>
+
+      <dt>Phone Number</dt>
+      <dd>070-4365-3849</dd>
+
+      <dt>Email</dt>
+      <dd><a href="mailto:info.ragtune@gmail.com">info.ragtune@gmail.com</a></dd>
+
+      <dt>Description of Services</dt>
+      <dd>Shopify development, UI/UX design, design guideline creation, maintenance, and consultation support.</dd>
+
+      <dt>Pricing</dt>
+      <dd>Quotes are provided based on the scope and requirements of each project.</dd>
+
+      <dt>Additional Fees</dt>
+      <dd>Bank transfer fees and communication costs are the responsibility of the client.</dd>
+
+      <dt>Payment Method</dt>
+      <dd>Bank transfer</dd>
+
+      <dt>Payment Timing</dt>
+      <dd>Payments must follow the schedule agreed upon at the time of contract.</dd>
+
+      <dt>Service Delivery Timeline</dt>
+      <dd>Services are provided according to the mutually agreed project schedule after contract signing.</dd>
+
+      <dt>Cancellation & Refund Policy</dt>
+      <dd>
+        Due to the nature of digital services, cancellation after work has begun is not accepted.<br>
+        For cancellations before work begins, please contact us for individual consultation.
+      </dd>
+
+      <dt>Disclaimer</dt>
+      <dd>
+        Due to the nature of the services, no guarantees are made regarding the effectiveness or results of the deliverables.<br>
+        We assume no responsibility for any trouble, loss, or damage arising from the use of this website.
+      </dd>
+    </dl>
+  </main>
+
+  <div id="footer-include"></div>
+
+  <script>
+    const includes = [
+      { id: "header-include", file: "../partials/header-en.html" },
+      { id: "footer-include", file: "../partials/footer-en.html" },
+    ];
+
+    Promise.all(
+      includes.map(part =>
+        fetch(part.file)
+          .then(res => res.text())
+          .then(html => {
+            document.getElementById(part.id).innerHTML = html;
+          })
+      )
+    ).then(() => {
+      const mainScript = document.createElement("script");
+      mainScript.src = "../script.js";
+      mainScript.onload = () => {
+        document.dispatchEvent(new Event("partialsLoaded"));
+      };
+      document.body.appendChild(mainScript);
+
+      document.body.classList.add("page-loaded");
+    });
+  </script>
+
+</body>
+</html>
