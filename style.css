@@ -838,7 +838,10 @@ footer h4+a {
     margin-inline: auto;
 }
 footer h4+a>img {
+    width: 100px;
     height: 100px;
+    border-radius: 100%;
+    overflow: hidden;
 }
 footer h4+a>span {
     font-size: var(--s10-12);
